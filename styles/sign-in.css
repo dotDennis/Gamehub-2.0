@@ -1,0 +1,108 @@
+@import "imports/variables.css";
+@import "imports/fonts.css";
+@import "imports/navbar.css";
+@import "imports/global.css";
+@import "imports/footer.css";
+
+.signin-header {
+  display: flex;
+  font-family: "Gumela", sans-serif;
+  color: var(--orange);
+  margin: auto;
+  font-size: 4vh;
+}
+
+.signin-header--underline {
+  display: flex;
+  color: var(--orange);
+  margin: 0 auto;
+  padding-top: 15px;
+  border-bottom: var(--orange) solid 1px;
+  width: 10vw;
+}
+
+.signin-form-text {
+  font-family: "Avenir", sans-serif;
+}
+
+.signin-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  max-height: 800px;
+  margin: 10vh auto auto auto;
+  padding: 30px 30px;
+  background-color: var(--darkblue);
+  border-radius: 50px;
+}
+
+.signin-form {
+  margin-top: 4vh;
+}
+
+.signin-form-text {
+  display: block;
+  width: 100%;
+  margin: 3vh 0;
+  border: 0;
+  background: var(--lightblue);
+  padding: 20px 40px;
+  outline: none;
+  color: black;
+  font-family: "Avenir", sans-serif;
+  transition: 0.2s;
+  height: 60px;
+}
+.signin-form-text:focus {
+  font-size: 16px;
+}
+
+.signin-form-btn {
+  display: flex;
+  margin: 0 auto auto auto;
+  background: var(--orange);
+  color: var(--darkblue);
+  font-size: 16px;
+  font-weight: lighter;
+  border-radius: 45px;
+  padding: 1vh 3vw 1vh 3vw;
+  text-align: center;
+  flex-direction: column;
+  display: flex;
+  text-decoration: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.signin-form-btn:hover {
+  padding: 1.1vh 3.1vw 1.1vh 3.1vw;
+  font-size: 18px;
+}
+
+.signin-support {
+    display: flex;
+    margin-top: 25px;
+    align-items: center;
+    flex-flow: column;
+}
+
+.signin-support-txt {
+  display: flex;
+  font-family: "Avenir", sans-serif;
+  color: var(--orange);
+  align-self: center;
+}
+
+.signin-support-txt:hover {
+    font-size: 17px;
+  }
+
+/*-------- MEDIA QUERIES ---------*/
+@media (max-width: 828px) {
+  .signin-form-btn {
+    font-size: 16px;
+  }
+  .signin-form-btn:hover {
+    font-size: 18px;
+  }
+}

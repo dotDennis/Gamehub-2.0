@@ -1,0 +1,181 @@
+ul li {
+  font-family: "Doubleplus", sans-serif;
+}
+
+h1 {
+  font-family: "Commando", sans-serif;
+}
+
+nav {
+  height: 100px;
+  background: var(--orange);
+  box-shadow: black 0px 5px 30px;
+}
+
+nav a img {
+  position: absolute;
+  left: 2%;
+  margin-top: 10px;
+}
+
+nav ul {
+  display: flex;
+  flex-flow: row nowrap;
+  margin-right: 25px;
+  list-style: none;
+}
+nav ul div {
+  display: flex;
+  line-height: 50px;
+}
+
+nav ul li a {
+  position: relative;
+  padding: 5px 0;
+  color: var(--lightblue);
+  text-decoration: none;
+}
+
+.nav-center {
+  margin: 25px auto;
+  padding-left: 10vw;
+}
+.nav-center li {
+  padding: 0 30px;
+  margin-left: 20px;
+}
+.nav-center li a {
+  font-size: 1.75em;
+  padding: 10px 15px;
+  color: var(--darkblue);
+}
+
+.nav-right {
+  margin-right: 25px;
+  margin-top: 25px;
+}
+
+.nav-right-container li a,
+.search-btn {
+  font-size: 1.75em;
+  color: var(--darkblue);
+  padding: 20px;
+}
+
+.search-txt {
+  font-size: 1.2em;
+}
+
+label #sign-one,
+label #sign-two {
+  font-size: 30px;
+  color: var(--darkblue);
+  float: right;
+  margin-right: 30px;
+  cursor: pointer;
+  display: none;
+  margin-top: 30px;
+}
+#ham-menu {
+  display: none;
+}
+.current-page {
+  border-bottom: 2px solid var(--darkblue);
+}
+
+/*-------- HOVER EFFECTS ---------*/
+.nav-center li a:hover {
+  font-size: 1.9em;
+  transition: 0.3s ease-out;
+}
+
+.navlogo:hover {
+  scale: 1.05;
+  transition: 0.3s ease-out;
+}
+
+.nav-right-container li a:hover {
+  font-size: 1.9em;
+  transition: 0.3s ease-out;
+}
+
+/*-------- MEDIA QUERIES ---------*/
+
+@media (max-width: 828px) {
+  label #sign-one {
+    display: flex;
+  }
+  nav ul {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: var(--darkblue);
+    left: -100%;
+    top: 100px;
+    transition: 0.5s;
+    z-index: 10;
+    flex-direction: column;
+  }
+  nav ul div {
+    line-height: 75px;
+  }
+  #ham-menu:checked ~ ul {
+    left: 0;
+  }
+  #ham-menu:checked ~ label #sign-one {
+    display: none;
+  }
+  #ham-menu:checked ~ label #sign-two {
+    display: block;
+  }
+  nav a img {
+    scale: 0.8;
+  }
+  .nav-center li a,
+  .nav-right-container li a,
+  .search-btn {
+    color: var(--orange);
+  }
+  .nav-center {
+    flex-direction: column;
+    align-items: center;
+    line-height: 75px;
+    margin-bottom: 0;
+    margin-top: 5vh;
+    padding-left: 0;
+  }
+  .nav-center li {
+    margin-left: 0;
+  }
+  .nav-right {
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    line-height: 75px;
+  }
+  .nav-right-container {
+    flex-direction: column;
+    align-items: center;
+    line-height: 75px;
+  }
+  .current-page {
+    border-bottom: 2px solid var(--orange);
+  }
+  .navlogo:hover {
+    scale: 0.85;
+  }
+  .nav-center li a:hover {
+    font-size: 1.8em;
+  }
+  label #sign-one:hover,
+  label #sign-two:hover {
+    font-size: 2em;
+  }
+}
+
+@media (max-width: 1000px) {
+  .nav-center li a,
+  .nav-right-container li a {
+    font-size: 1.4em;
+  }
+}
