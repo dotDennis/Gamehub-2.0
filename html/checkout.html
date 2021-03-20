@@ -7,34 +7,14 @@
     <title>GameHub | Checkout</title>
     <link rel="stylesheet" href="../styles/checkout.css" />
     <script src="https://kit.fontawesome.com/adc390fe7b.js" crossorigin="anonymous"></script>
-    <!-- Hotjar Tracking Code for https://frontenddennis.netlify.app/ -->
-    <script>
-      (function (h, o, t, j, a, r) {
-        h.hj =
-          h.hj ||
-          function () {
-            (h.hj.q = h.hj.q || []).push(arguments);
-          };
-        h._hjSettings = { hjid: 2269876, hjsv: 6 };
-        a = o.getElementsByTagName("head")[0];
-        r = o.createElement("script");
-        r.async = 1;
-        r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
-        a.appendChild(r);
-      })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
-    </script>
   </head>
 
   <body>
     <header>
       <nav>
-        <input type="checkbox" id="ham-menu" />
-        <label for="ham-menu">
-          <i class="fas fa-bars" id="sign-one"></i>
-          <i class="fas fa-times" id="sign-two"></i>
-        </label>
         <a href="../index.html"><img class="navlogo" src="../images/logo.png" alt="Gamehub logo" /></a>
-        <ul>
+        <button class="ham-menu closed"><i class="fas fa-bars"></i></button>
+        <ul class="nav-ul">
           <div class="nav-center">
             <li><a href="../index.html">Home</a></li>
             <li><a href="#">About</a></li>
@@ -47,7 +27,7 @@
                 <a href="Search-results.html"><i class="fas fa-search"></i></a>
               </li>
               <li>
-                <a class="current-page" href="checkout.html"><i class="fas fa-shopping-cart"></i></a>
+                <a href="checkout.html"><i class="fas fa-sack-dollar"></i></a>
               </li>
               <li>
                 <a href="sign-in.html"><i class="fas fa-user"></i></a>

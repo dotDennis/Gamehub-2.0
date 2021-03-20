@@ -30,7 +30,7 @@
   flex-direction: column;
   max-width: 500px;
   max-height: 800px;
-  margin: 10vh auto auto auto;
+  margin: 200px auto auto auto;
   padding: 30px 30px;
   background-color: var(--darkblue);
   border-radius: 50px;
@@ -61,29 +61,40 @@
   display: flex;
   margin: 0 auto auto auto;
   background: var(--orange);
-  color: var(--darkblue);
-  font-size: 16px;
-  font-weight: lighter;
+
   border-radius: 45px;
-  padding: 1vh 3vw 1vh 3vw;
-  text-align: center;
+  padding: 1rem;
   flex-direction: column;
-  display: flex;
   text-decoration: none;
-  border: 0;
-  cursor: pointer;
+  transition: 0.3s ease;
+  width: 50%;
 }
 
 .signin-form-btn:hover {
-  padding: 1.1vh 3.1vw 1.1vh 3.1vw;
-  font-size: 18px;
+  padding: 1.1rem;
+  transition: 0.3s ease;
+}
+
+.signin-form-btn input {
+  font-size: 1rem;
+  font-weight: lighter;
+  color: var(--darkblue);
+  text-align: center;
+  border: none;
+  width: 100%;
+  background: transparent;
+  cursor: pointer;
+}
+
+.signin-form-btn input:focus {
+  outline: none;
 }
 
 .signin-support {
-    display: flex;
-    margin-top: 25px;
-    align-items: center;
-    flex-flow: column;
+  display: flex;
+  margin-top: 25px;
+  align-items: center;
+  flex-flow: column;
 }
 
 .signin-support-txt {
@@ -94,8 +105,8 @@
 }
 
 .signin-support-txt:hover {
-    font-size: 17px;
-  }
+  font-size: 17px;
+}
 
 /*-------- MEDIA QUERIES ---------*/
 @media (max-width: 828px) {
