@@ -59,7 +59,7 @@ footer .container div a {
 /*----- HOVER EFFECTS -----*/
 
 .container div a:hover {
-  transform: scale(1.1);
+  transform: scale(1.1) translateX(5px);
   transition: 0.3s ease;
 }
 
