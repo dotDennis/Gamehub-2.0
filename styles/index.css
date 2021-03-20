@@ -24,7 +24,7 @@ body {
 }
 
 .ctacontainer {
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
 .cta {
   display: flex;
@@ -72,7 +72,9 @@ body {
     padding: 1.7vh 7.2vw 1.7vh 7.2vw;
     font-size: 4.1vw;
   }
-  
+  .cta {
+    margin-top: 2rem;
+  }
   .fa-angle-right {
     font-size: 5vh;
   }
