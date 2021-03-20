@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Secure checkout page for your new games, on Gamehub" />
+    <title>GameHub | Checkout</title>
+    <link rel="stylesheet" href="../styles/checkout.css" />
+    <script src="https://kit.fontawesome.com/adc390fe7b.js" crossorigin="anonymous"></script>
+    <!-- Hotjar Tracking Code for https://frontenddennis.netlify.app/ -->
+    <script>
+      (function (h, o, t, j, a, r) {
+        h.hj =
+          h.hj ||
+          function () {
+            (h.hj.q = h.hj.q || []).push(arguments);
+          };
+        h._hjSettings = { hjid: 2269876, hjsv: 6 };
+        a = o.getElementsByTagName("head")[0];
+        r = o.createElement("script");
+        r.async = 1;
+        r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+        a.appendChild(r);
+      })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <input type="checkbox" id="ham-menu" />
+        <label for="ham-menu">
+          <i class="fas fa-bars" id="sign-one"></i>
+          <i class="fas fa-times" id="sign-two"></i>
+        </label>
+        <a href="../index.html"><img class="navlogo" src="../images/logo.png" alt="Gamehub logo" /></a>
+        <ul>
+          <div class="nav-center">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="buy-games.html">Buy</a></li>
+            <li><a href="#">Sell</a></li>
+          </div>
+          <div class="nav-right">
+            <div class="nav-right-container">
+              <li>
+                <a href="Search-results.html"><i class="fas fa-search"></i></a>
+              </li>
+              <li>
+                <a class="current-page" href="checkout.html"><i class="fas fa-shopping-cart"></i></a>
+              </li>
+              <li>
+                <a href="sign-in.html"><i class="fas fa-user"></i></a>
+              </li>
+            </div>
+          </div>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="banner">
+        <div class="banner-container">
+          <h1 class="banner-txt">Checkout</h1>
+        </div>
+      </div>
+      <h2 class="titles">Checkout</h2>
+      <h2 class="titles">Cart</h2>
+      <div class="checkout">
+        <div class="checkout--container">
+          <form action="checkout.php" method="POST">
+            <div class="rowleft">
+              <h2 class="inside">Billing Address</h2>
+              <label for="fname">Full name</label>
+              <input type="text" id="fname" name="firstname" placeholder="Ola Nordmann" />
+              <label for="email">Email</label>
+              <input type="text" id="email" name="email" placeholder="you@example.com" />
+              <label for="adr">Adress</label>
+              <input type="text" id="adr" name="adr" placeholder="1234 Main St." />
+              <label for="adr2">Adress 2 (Optional)</label>
+              <input type="text" id="adr2" name="adr2" placeholder="Apartment or suite" />
+              <label for="country">Country</label>
+              <input type="text" id="country" name="country" placeholder="..." />
+              <label for="state">State</label>
+              <input type="text" id="state" name="state" placeholder="..." />
+              <label for="zip">Zip</label>
+              <input type="text" id="zip" name="zip" placeholder="Postal code" />
+            </div>
+            <div class="rowright">
+              <h2 class="inside">Payment</h2>
+              <label for="card">Payment options</label>
+              <div class="card-container">
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-mastercard"></i>
+                <i class="fab fa-cc-paypal"></i>
+                <i class="fab fa-google-pay"></i>
+              </div>
+              <label for="card-name">Name on card</label>
+              <input type="text" id="card-name" name="card-name" placeholder="Ola Nordmann" />
+              <label for="card-num">Card number</label>
+              <input type="text" id="card-num" name="card-nume" placeholder="1111-2222-3333-444" />
+              <label for="expm">Exp. month</label>
+              <input type="text" id="card-expm" name="card-expm" placeholder="September" />
+              <label for="card-expy">Exp. year</label>
+              <input type="text" id="card-expy" name="card-expy" placeholder="yyyy" />
+              <label for="card-ccv">CCV</label>
+              <input type="text" id="card-ccv" name="card-ccv" placeholder="xxx" />
+              <label for="sameadr"><input type="checkbox" checked="checked" name="sameadr" />Shipping adress same as billing</label>
+              <input type="submit" value="Continue to checkout" class="btn" />
+            </div>
+          </form>
+        </div>
+        <div class="cart-info">
+          <p><a href="#">GTA 5</a><span class="price">$45 USD</span></p>
+          <p><a href="#">Modern Warfare</a><span class="price">$35 USD</span></p>
+          <p><a href="#">Genshin Impact</a><span class="price">$30 USD</span></p>
+          <p><a href="#">Apex Legends</a><span class="price">$15 USD</span></p>
+          <hr />
+          <p>
+            Total <span class="price"><b>$125 USD</b></span>
+          </p>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

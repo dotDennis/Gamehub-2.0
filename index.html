@@ -2,42 +2,60 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gamehub 2.0</title>
+    <meta
+      name="description"
+      content="GameHub is a marketplace for buying & selling games. You can sell or purchase used games, for a cheaper price. GameHub also offers pre-orders on newly released games."
+    />
+    <title>Gamehub | Universe of games</title>
     <link rel="stylesheet" href="styles/index.css" />
-
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/3c371c70a6.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <header>
-      <nav class="nav-menu">
-        <a class="nav-logo" href="index.html"><img src="img/logo.png" alt="gamehub logo" /></a>
-
-        <button class="hamburger">
-          <i class="fas fa-bars"></i>
-        </button>
-
-        <ul class="ul-left nav-ul">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="marketplace.html">Buy</a></li>
-          <li><a href="sell.html">Sell</a></li>
-        </ul>
-        <ul class="ul-right nav-ul">
-          <li>
-            <a aria-label="search" href="search.html"><i class="fas fa-search"></i></a>
-          </li>
-          <li>
-            <a aria-label="checkout" href="checkout.html"><i class="fad fa-sack-dollar"></i></a>
-          </li>
-          <li>
-            <a aria-label="account" href="account.html"><i class="fas fa-user"></i></a>
-          </li>
+      <nav>
+        <a href="index.html"><img class="navlogo" src="images/logo.png" alt="Gamehub logo" /></a>
+        <button class="ham-menu closed"><i class="fas fa-bars"></i></button>
+        <ul class="nav-ul">
+          <div class="nav-center">
+            <li><a class="current-page " href="index.html">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="html/buy-games.html">Buy</a></li>
+            <li><a href="#">Sell</a></li>
+          </div>
+          <div class="nav-right">
+            <div class="nav-right-container">
+              <li>
+                <a href="html/Search-results.html"><i class="fas fa-search"></i></a>
+              </li>
+              <li>
+                <a href="html/checkout.html"><i class="fas fa-sack-dollar"></i></a>
+              </li>
+              <li>
+                <a href="html/sign-in.html"><i class="fas fa-user"></i></a>
+              </li>
+            </div>
+          </div>
         </ul>
       </nav>
     </header>
+    <main>
+      <div class="banner">
+        <div class="banner-container">
+          <h1 class="banner-txt">Gamehub</h1>
+        </div>
+      </div>
+      <div class="container">
+        <h2>the universe of games</h2>
+        <div class="ctacontainer">
+          <a class="cta" href="html/marketplace.html"
+            ><h3>Start Adventure</h3>
+            <i class="fas fa-angle-right"></i
+          ></a>
+        </div>
+      </div>
+    </main>
 
     <script src="js/script.js"></script>
   </body>

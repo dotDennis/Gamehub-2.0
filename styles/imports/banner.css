@@ -1,0 +1,20 @@
+.banner {
+    margin: 200px auto 5rem auto;
+    background: var(--orange);
+    width: 80vw;
+  }
+  
+  .banner-container {
+    display: flex;
+    justify-content: center;
+    flex-flow: row nowrap;
+    align-items: center;
+  }
+  
+  .banner-txt {
+    color: var(--darkblue);
+    font-size: 12.4375vw;
+    align-self: flex-end;
+    margin-top: 3vh;
+  }
+

@@ -1,0 +1,55 @@
+@import "imports/variables.css";
+@import "imports/fonts.css";
+@import "imports/navbar.css";
+@import "imports/global.css";
+@import "imports/banner.css";
+@import "imports/footer.css";
+
+body {
+    font-family: "Avenir", sans-serif;
+    font-size: 17px;
+}
+
+.titles{
+    color: var(--orange);
+    font-family: "Gumela", sans-serif;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+
+.checkout {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 10px;
+}
+
+.cart-info {
+    flex: 5%;
+    margin-top: 40px;
+    margin-left: 5%;
+}
+
+.checkout--container {
+    flex: 40%;
+    margin-left: 20%;
+}
+
+.rowleft, .rowright, .cart-info{
+    padding: 0 16px;
+    padding: 3px 18px 13px 18px;
+    background: var(--lightblue);
+}
+
+input[type=text]{
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: none;
+    border-radius: 3px;
+}
+
+label {
+    margin-bottom: 10px;
+    display: block;
+}

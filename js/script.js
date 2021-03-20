@@ -1,10 +1,16 @@
-const hamburger = document.querySelector(".hamburger");
-const navLeft = document.querySelector(".ul-left");
-const navRight = document.querySelector(".ul-right");
+const hamburger = document.querySelector(".ham-menu")
+const menu = document.querySelector(".nav-ul");
 
 function show() {
-  navLeft.classList.toggle("show");
-  navRight.classList.toggle("show");
-}
+    menu.classList.toggle("show");
 
-hamburger.addEventListener("click", show);
+    if(hamburger.classList.contains("closed")) {
+    hamburger.innerHTML = `<i class="fas fa-times"></i> `;
+    hamburger.classList.remove("closed")
+    } else {
+        hamburger.innerHTML = `<i class="fas fa-bars"></i>`
+        hamburger.classList.add("closed");
+    }
+  }
+  
+  hamburger.addEventListener("click", show);
