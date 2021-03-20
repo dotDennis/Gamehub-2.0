@@ -31,6 +31,7 @@ body {
   flex-flow: row nowrap;
   text-decoration: none;
   align-items: center;
+  transition: 0.3s ease;
 }
 .fa-angle-right {
   font-size: 7vh;
@@ -48,30 +49,20 @@ body {
   text-align: center;
   flex-direction: column;
   display: flex;
-
 }
 
 /*-------- HOVER EFFECTS ---------*/
-.cta h3:hover {
+.cta:hover h3 {
   color: var(--orange);
-  transition: 0.3s ease-out;
-  font-size: 4.1vh;
-  padding: 1.6vh 7.1vw 1.6vh 7.1vw;
 }
-.fa-angle-right:hover {
-  font-size: 7.3vh;
+
+.cta:hover {
+  transform: scale(1.05);
+  transition: 0.3s ease;
 }
 
 /*-------- MEDIA QUERIES ---------*/
 @media (max-width: 828px) {
-  .cta h3 {
-    padding: 1.6vh 7.1vw 1.6vh 7.1vw;
-    font-size: 4vw;
-  }
-  .cta h3:hover {
-    padding: 1.7vh 7.2vw 1.7vh 7.2vw;
-    font-size: 4.1vw;
-  }
   .cta {
     margin-top: 2rem;
   }
