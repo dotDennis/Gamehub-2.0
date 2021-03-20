@@ -45,7 +45,7 @@ nav {
   text-align: center;
 }
 
-.nav-ul div{
+.nav-ul div {
   display: block;
 }
 
@@ -63,7 +63,7 @@ nav {
 }
 
 .current-page::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   height: 2px;
@@ -75,14 +75,14 @@ nav {
 
 .navlogo {
   transform: scale(0.85);
-    transition: 0.3s ease;
+  transition: 0.3s ease;
 }
 
 .ham-menu {
   background-color: transparent;
   display: block;
   border: none;
-  color: var(--darkblue);
+  color: var(--darkestblue);
   font-size: 1.7rem;
   cursor: pointer;
 }
@@ -97,16 +97,14 @@ nav {
   transition: 0.2s ease;
 }
 
-
 .navlogo:hover {
-  transform: scale(0.90);
+  transform: scale(0.9);
   transition: 0.3s ease;
 }
 
-
 /* -------- MEDIA QUERIES --------- */
 
-@media screen and (min-width:1000px){
+@media screen and (min-width: 1000px) {
   nav {
     padding: 0 25px;
   }
@@ -135,20 +133,17 @@ nav {
   }
 }
 
-@media screen and (min-width:1200px){
-.nav-ul .nav-center {
-  margin-left: 32%;
-}
-}
-
-@media screen and (min-width:1500px){
-.nav-ul .nav-center {
-  margin-left: 38%;
-}
+@media screen and (min-width: 1200px) {
+  .nav-ul .nav-center {
+    margin-left: 32%;
+  }
 }
 
-
-
+@media screen and (min-width: 1500px) {
+  .nav-ul .nav-center {
+    margin-left: 38%;
+  }
+}
 
 /* 
 @media (max-width: 828px) {
@@ -163,7 +158,7 @@ nav {
     z-index: 10;
     flex-direction: column;
   } */
-  /* .nav-center li a,
+/* .nav-center li a,
   .nav-right-container li a,
   .search-btn {
     color: var(--orange);

@@ -71,7 +71,7 @@
 }
 
 .signin-form-btn:hover {
-  padding: 1.1rem;
+  transform: scale(1.1);
   transition: 0.3s ease;
 }
 
@@ -102,10 +102,12 @@
   font-family: "Avenir", sans-serif;
   color: var(--orange);
   align-self: center;
+  transition: 0.3s ease;
 }
 
 .signin-support-txt:hover {
-  font-size: 17px;
+  transform: scale(1.1);
+  transition: 0.3s ease;
 }
 
 /*-------- MEDIA QUERIES ---------*/

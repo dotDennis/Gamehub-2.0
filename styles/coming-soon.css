@@ -1,0 +1,58 @@
+@import "imports/variables.css";
+@import "imports/fonts.css";
+@import "imports/navbar.css";
+@import "imports/global.css";
+@import "imports/banner.css";
+
+.container {
+  margin-top: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container h2 {
+  font-family: "Avenir ", sans-serif;
+  color: var(--lightblue);
+  font-size: 5vh;
+  font-weight: lighter;
+  border-bottom: 2px solid var(--orange);
+}
+
+.ctacontainer {
+  margin-top: 3rem;
+}
+.cta {
+  display: flex;
+  flex-flow: row nowrap;
+  text-decoration: none;
+  align-items: center;
+  transition: 0.3s ease;
+}
+.fa-angle-left {
+  font-size: 7vh;
+  margin-right: 2vw;
+  color: var(--darkblue);
+}
+.cta h3 {
+  font-family: "Doubleplus", sans-serif;
+  background: var(--darkblue);
+  color: var(--lightblue);
+  font-size: 4vh;
+  font-weight: lighter;
+  border-radius: 45px;
+  padding: 1.5vh 7vw 1.5vh 7vw;
+  text-align: center;
+  flex-direction: column;
+  display: flex;
+}
+
+/* Hover effects */
+.cta:hover h3 {
+  color: var(--orange);
+}
+
+.cta:hover {
+  transform: scale(1.05);
+  transition: 0.3s ease;
+}
