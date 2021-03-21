@@ -91,6 +91,23 @@ nav {
   outline: none;
 }
 
+.cart {
+  position: relative;
+}
+
+.cart-count {
+  font-family: "Avenir";
+  position: absolute;
+  top: 0;
+  left: 20px;
+  font-size: 20px;
+  border-radius: 20px;
+  color: var(--darkblue);
+  border: 2px solid var(--orange);
+  padding: 0 5px;
+  background: var(--orange);
+}
+
 /*-------- HOVER EFFECTS ---------*/
 .nav-ul div li a:hover {
   transform: scale(1.1);
@@ -131,6 +148,13 @@ nav {
   .current-page::after {
     background: var(--darkblue);
   }
+  .cart-count {
+    color: var(--orange);
+    border: 2px solid var(--darkblue);
+    background: var(--darkblue);
+    padding: 0 4px;
+    font-size: 16px;
+  }
 }
 
 @media screen and (min-width: 1200px) {
@@ -144,69 +168,3 @@ nav {
     margin-left: 38%;
   }
 }
-
-/* 
-@media (max-width: 828px) {
-  /* .nav-ul {
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    background: var(--darkblue);
-    left: -100%;
-    top: 100px;
-    transition: 0.5s;
-    z-index: 10;
-    flex-direction: column;
-  } */
-/* .nav-center li a,
-  .nav-right-container li a,
-  .search-btn {
-    color: var(--orange);
-  }
-  .nav-center {
-    flex-direction: column;
-    align-items: center;
-    line-height: 75px;
-    margin-bottom: 0;
-    margin-top: 5vh;
-    padding-left: 0;
-  }
-  .nav-center li {
-    margin-left: 0;
-  }
-  .nav-right {
-    flex-direction: column;
-    align-items: center;
-    margin: 0;
-    line-height: 75px;
-  }
-  .nav-right-container {
-    flex-direction: column;
-    align-items: center;
-    line-height: 75px;
-  }
-  .current-page {
-    border-bottom: 2px solid var(--orange);
-  }
-  .navlogo:hover {
-    transform: scale: scale(0.85);
-  }
-  .nav-center li a:hover {
-    font-size: 1.8em;
-  }
-  .nav-ul.show {
-    display: flex;
-}
-.ham-menu {
-    display: block;
-}
-}
-
-} */
-
-/* @media (max-width: 1000px) {
-  .nav-center li a,
-  .nav-right-container li a {
-    font-size: 1.4em;
-  }
-} */
