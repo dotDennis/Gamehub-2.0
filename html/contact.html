@@ -44,11 +44,30 @@
         </div>
       </div>
       <section class="contact">
-        <form class="contact-form" action="contact.html" method="post">
-          <input type="text" class="contact-form-text" placeholder="Your Name" />
-          <input type="email" class="contact-form-text" placeholder="Your email" />
-          <textarea class="contact-form-text" placeholder="Your message"></textarea>
-          <input type="submit" class="contact-form-btn" value="Send" />
+        <div id="success-message"></div>
+        <form id="contact-form">
+          <div>
+            <label>
+              Full name*
+              <input name="fullName" class="contact-form-text" id="fullName" />
+            </label>
+            <div class="error-message" id="nameError">Please enter your full name (minimum 1 character)</div>
+          </div>
+          <div>
+            <label>
+              Email*
+              <input name="email" class="contact-form-text" id="email" />
+            </label>
+            <div class="error-message" id="emailError">Please enter your email, example@email.com</div>
+          </div>
+          <div>
+            <label>
+              Your Message*
+              <textarea name="message" class="contact-form-text" id="message"></textarea>
+            </label>
+            <div class="error-message" id="messageError">Your message has to be a minimum of 25 characters, and a maximum of 150.</div>
+          </div>
+          <button class="contact-form-btn" id="form-button" disabled>Send</button>
         </form>
       </section>
     </main>
@@ -84,5 +103,6 @@
       </div>
     </footer>
     <script src="../js/hamburgerMenu.js"></script>
+    <script src="../js/validateForm.js"></script>
   </body>
 </html>
