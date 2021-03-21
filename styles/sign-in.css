@@ -61,7 +61,6 @@
   display: flex;
   margin: 0 auto auto auto;
   background: var(--orange);
-
   border-radius: 45px;
   padding: 1rem;
   flex-direction: column;
