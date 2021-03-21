@@ -5,51 +5,72 @@
 @import "imports/banner.css";
 @import "imports/footer.css";
 
-body {
-    font-family: "Avenir", sans-serif;
-    font-size: 17px;
+main {
+  font-family: "Avenir", sans-serif;
+  font-size: 20px;
+  color: var(--darkblue);
 }
 
-.titles{
-    color: var(--orange);
-    font-family: "Gumela", sans-serif;
-    display: flex;
-    flex-flow: row nowrap;
+.titles {
+  font-family: "Gumela", sans-serif;
 }
 
+.inside {
+  margin: 1rem 0;
+  text-align: left;
+  /* color: ; */
+}
 
 .checkout {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 10px;
+  display: block;
+  margin: 1rem auto;
+  padding: 5%;
+  max-width: 80%;
+  background: var(--lightblue);
+}
+
+.checkout input {
+  width: 100%;
+}
+
+.title-checkout {
+  display: none;
+}
+
+.title-cart {
+  margin-top: 2rem;
+  color: var(--darkestblue);
+  text-align: right;
+  margin-bottom: 1rem;
 }
 
 .cart-info {
-    flex: 5%;
-    margin-top: 40px;
-    margin-left: 5%;
+  text-align: right;
 }
 
-.checkout--container {
-    flex: 40%;
-    margin-left: 20%;
+.cart-info p a {
+  margin-right: 20px;
+  color: var(--darkblue);
 }
 
-.rowleft, .rowright, .cart-info{
-    padding: 0 16px;
-    padding: 3px 18px 13px 18px;
-    background: var(--lightblue);
+hr {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
-input[type=text]{
-    width: 100%;
-    margin-bottom: 20px;
-    padding: 12px;
-    border: none;
-    border-radius: 3px;
+.total-price {
+  text-align: right;
 }
 
-label {
-    margin-bottom: 10px;
-    display: block;
+@media screen and (min-width:1000px) {
+    .checkout {
+        max-width: 60%;
+    }
+}
+
+
+@media screen and (min-width:1400px) {
+    .checkout {
+        max-width: 50%;
+    }
 }

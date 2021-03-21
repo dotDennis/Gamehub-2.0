@@ -28,7 +28,7 @@
                 <a href="Search-results.html"><i class="fas fa-search"></i></a>
               </li>
               <li>
-                <a class="current-page" href="checkout.html"><i class="fas fa-sack-dollar"></i></a>
+                <a class="current-page" href="checkout.html"><i class="fas fa-sack-dollar cart-icon"></i></a>
               </li>
               <li>
                 <a href="sign-in.html"><i class="fas fa-user"></i></a>
@@ -44,8 +44,7 @@
           <h1 class="banner-txt">Checkout</h1>
         </div>
       </div>
-      <h2 class="titles">Checkout</h2>
-      <h2 class="titles">Cart</h2>
+      <h2 class="titles title-checkout">Checkout</h2>
       <div class="checkout">
         <div class="checkout--container">
           <form action="checkout.php" method="POST">
@@ -90,18 +89,15 @@
             </div>
           </form>
         </div>
+        <h2 class="titles title-cart">Cart</h2>
         <div class="cart-info">
-          <p><a href="coming-soon.html">GTA 5</a><span class="price">$45 USD</span></p>
-          <p><a href="coming-soon.html">Modern Warfare</a><span class="price">$35 USD</span></p>
-          <p><a href="coming-soon.html">Genshin Impact</a><span class="price">$30 USD</span></p>
-          <p><a href="coming-soon.html">Apex Legends</a><span class="price">$15 USD</span></p>
-          <hr />
-          <p>
-            Total <span class="price"><b>$125 USD</b></span>
-          </p>
         </div>
+        <hr />
+        <p class="total-price"></p>
       </div>
     </main>
     <script src="../js/hamburgerMenu.js"></script>
+    <script src="../js/shoppingCart.js"></script>
+    <script src="../js/checkout.js"></script>
   </body>
 </html>
