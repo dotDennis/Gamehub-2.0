@@ -1,8 +1,8 @@
-@import "imports/variables.css";
-@import "imports/fonts.css";
-@import "imports/navbar.css";
-@import "imports/global.css";
-@import "imports/banner.css";
+@import "styles/imports/variables.css";
+@import "styles/imports/fonts.css";
+@import "styles/imports/navbar.css";
+@import "styles/imports/global.css";
+@import "styles/imports/banner.css";
 
 main {
   display: flex;
