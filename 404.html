@@ -4,65 +4,227 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="View your account information on GameHub. Change your preferences & other settings." />
-    <title>GameHub | Your Account</title>
-    <link rel="stylesheet" href="404.css" />
-    <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/3c371c70a6.js" crossorigin="anonymous"></script>
-    <!-- Hotjar Tracking Code for https://dennis-gamehub-v2.netlify.app/ -->
-    <script>
-      (function (h, o, t, j, a, r) {
-        h.hj =
-          h.hj ||
-          function () {
-            (h.hj.q = h.hj.q || []).push(arguments);
-          };
-        h._hjSettings = { hjid: 2308660, hjsv: 6 };
-        a = o.getElementsByTagName("head")[0];
-        r = o.createElement("script");
-        r.async = 1;
-        r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
-        a.appendChild(r);
-      })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
-    </script>
+    <title>404 Page not found</title>
+
+    <!-- Author: Sarah Frisk | September 6, 2018 -->
+    <!-- link to codepen: https://codepen.io/sfrisk/pen/Kxvbdy -->
+
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Cabin+Sketch");
+
+      html {
+        height: 100%;
+      }
+
+      body {
+        height: 100%;
+        overflow: hidden;
+      }
+
+      body {
+        display: flex;
+        background: #131521;
+      }
+
+      h1 {
+        font-family: "Cabin Sketch", cursive;
+        color: #e6ae65;
+        font-size: 3em;
+        text-align: center;
+        opacity: 0.8;
+        order: 1;
+      }
+
+      h1 small {
+        display: block;
+      }
+      a {
+        color: #bac5cf;
+      }
+      p {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        margin-left: 10px;
+        font-size: 1.2rem;
+        color: #ededec;
+      }
+      p a {
+        color: #ededec;
+      }
+
+      .site {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+        flex-direction: column;
+        margin: 0 auto;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+      }
+
+      .sketch {
+        position: relative;
+        height: 400px;
+        min-width: 400px;
+        margin: 0;
+        overflow: visible;
+        order: 2;
+      }
+
+      .bee-sketch {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      .red {
+        background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/red-1.png) no-repeat center center;
+        opacity: 1;
+        animation: red 3s linear infinite, opacityRed 5s linear alternate infinite;
+      }
+
+      .blue {
+        background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/blue-1.png) no-repeat center center;
+        opacity: 0;
+        animation: blue 3s linear infinite, opacityBlue 5s linear alternate infinite;
+      }
+
+      @media only screen and (min-width: 780px) {
+        .site {
+          flex-direction: row;
+          padding: 1em 3em 1em 0em;
+        }
+
+        h1 {
+          text-align: right;
+          order: 2;
+          padding-bottom: 2em;
+          padding-left: 2em;
+        }
+
+        .sketch {
+          order: 1;
+        }
+      }
+
+      @keyframes blue {
+        0% {
+          background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/blue-1.png);
+        }
+        9.09% {
+          background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/blue-2.png);
+        }
+        27.27% {
+          background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/blue-3.png);
+        }
+        36.36% {
+          background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/blue-4.png);
+        }
+        45.45% {
+          background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/blue-5.png);
+        }
+        54.54% {
+          background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/blue-6.png);
+        }
+        63.63% {
+          background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/blue-7.png);
+        }
+        72.72% {
+          background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/blue-8.png);
+        }
+        81.81% {
+          background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/blue-9.png);
+        }
+        100% {
+          background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/blue-1.png);
+        }
+      }
+
+      @keyframes red {
+        0% {
+          background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/red-1.png);
+        }
+        9.09% {
+          background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/red-2.png);
+        }
+        27.27% {
+          background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/red-3.png);
+        }
+        36.36% {
+          background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/red-4.png);
+        }
+        45.45% {
+          background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/red-5.png);
+        }
+        54.54% {
+          background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/red-6.png);
+        }
+        63.63% {
+          background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/red-7.png);
+        }
+        72.72% {
+          background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/red-8.png);
+        }
+        81.81% {
+          background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/red-9.png);
+        }
+        100% {
+          background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/red-1.png);
+        }
+      }
+
+      @keyframes opacityBlue {
+        from {
+          opacity: 0;
+        }
+        25% {
+          opacity: 0;
+        }
+        75% {
+          opacity: 1;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes opacityRed {
+        from {
+          opacity: 1;
+        }
+        25% {
+          opacity: 1;
+        }
+        75% {
+          opacity: 0.3;
+        }
+        to {
+          opacity: 0.3;
+        }
+      }
+    </style>
   </head>
   <body>
-    <header>
-      <nav>
-        <a href="../images/"><img class="navlogo" src="images/logo.png" alt="Gamehub logo" /></a>
-        <button class="ham-menu closed"><i class="fas fa-bars"></i></button>
-        <ul class="nav-ul">
-          <div class="nav-center">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="html/coming-soon.html">About</a></li>
-            <li><a href="html/buy-games.html">Buy</a></li>
-            <li><a href="html/coming-soon.html">Sell</a></li>
-          </div>
-          <div class="nav-right">
-            <div class="nav-right-container">
-              <li>
-                <a href="html/Search-results.html"><i class="fas fa-search"></i></a>
-              </li>
-              <li>
-                <a href="html/checkout.html" class="cart"><i class="fas fa-sack-dollar cart-icon"></i></a>
-              </li>
-              <li>
-                <a class="current-page" href="html/sign-in.html"><i class="fas fa-user"></i></a>
-              </li>
-            </div>
-          </div>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <div class="container">
-        <div class="text-container">
-          <h1 class="banner-txt">404</h1>
-          <h2>Oh, man... This page doesn't exist!</h2>
-          <p>try going <a href="index.html">back to start</a></p>
-        </div>
-
-        <img src="images/person.png" alt="" />
+    <div class="site">
+      <div class="sketch">
+        <div class="bee-sketch red"></div>
+        <div class="bee-sketch blue"></div>
       </div>
-    </main>
+
+      <h1>
+        404: <small>Players Not Found</small><small><a href="/">return home</a></small>
+      </h1>
+    </div>
+    <p>Author: <a href="https://codepen.io/sfrisk/pen/Kxvbdy"> Sarah Frisk</a></p>
   </body>
 </html>
