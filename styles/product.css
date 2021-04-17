@@ -3,6 +3,8 @@
 @import "imports/navbar.css";
 @import "imports/global.css";
 @import "imports/footer.css";
+@import "imports/loader.css";
+
 
 main {
   margin-top: 150px;

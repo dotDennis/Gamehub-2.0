@@ -1,18 +1,24 @@
+// select containers
 const featuredContainer = document.querySelector(".featured");
 const preOrderContainer = document.querySelector(".preOrder");
 const newReleaseContainer = document.querySelector(".newReleases");
 const allProductsContainer = document.querySelector(".allProducts");
+const loader = document.querySelector(".loader");
 
+// select the API & add keys
 const url = "https://dennisl.no/wp-json/wc/v3/products?per_page=20";
 const key = "ck_dd349ee9bd6f31714f886f1bb0ff8f51e6e86a48";
 const secret = "cs_58e5bd13e3e4cd911f0624f7bc94e7ee7089490e";
 
 const wooAPI = `${url}&consumer_key=${key}&consumer_secret=${secret}`;
 
+// get json and create product cards (turn into functions**)
 async function getProducts() {
   try {
     // await response then await json
     const json = await (await fetch(wooAPI)).json();
+
+    console.log(wooAPI);
 
     for (let i = 0; i < json.length; i++) {
       // declarations
@@ -25,7 +31,7 @@ async function getProducts() {
       if (json[i].featured) {
         // if product is featured run this function:
         featuredContainer.innerHTML += `<div class="product-card">
-                <a class="product-link" href="product.html"></a>
+                <a class="product-link" href="product.html?id=${json[i].id}"></a>
                     <div class="product-card__image-container">
                         <img src="${image}" alt="Game: ${productName}">
                     </div>
@@ -41,7 +47,7 @@ async function getProducts() {
       // if product is in category: 'PreOrder' run this function:
       if (category === "PreOrder") {
         preOrderContainer.innerHTML += `<div class="product-card">
-                <a class="product-link" href="product.html"></a>
+                <a class="product-link" href="product.html?id=${json[i].id}"></a>
                     <div class="product-card__image-container">
                         <img src="${image}" alt="Game: ${productName}">
                     </div>
@@ -57,7 +63,7 @@ async function getProducts() {
       // if product is in category: 'NewReleases' run this function:
       if (category === "NewReleases") {
         newReleaseContainer.innerHTML += `<div class="product-card">
-                <a class="product-link" href="product.html"></a>
+                <a class="product-link" href="product.html?id=${json[i].id}"></a>
                     <div class="product-card__image-container">
                         <img src="${image}" alt="Game: ${productName}">
                     </div>
@@ -73,7 +79,7 @@ async function getProducts() {
       // then run this function if product name is not undefined:
       if (productName) {
         allProductsContainer.innerHTML += `<div class="product-card">
-                <a class="product-link" href="product.html"></a>
+                <a class="product-link" href="product.html?id=${json[i].id}"></a>
                     <div class="product-card__image-container">
                         <img src="${image}" alt="Game: ${productName}">
                     </div>
@@ -90,6 +96,8 @@ async function getProducts() {
   } catch (error) {
     // if there's an error - display error to user
     featuredContainer.innerHTML = createError(error);
+  } finally {
+    loader.classList.remove("loader");
   }
 }
 

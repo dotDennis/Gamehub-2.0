@@ -4,6 +4,7 @@
 @import "imports/global.css";
 @import "imports/banner.css";
 @import "imports/footer.css";
+@import "imports/loader.css";
 
 .container--title {
   font-family: "Gumela", sans-serif;
