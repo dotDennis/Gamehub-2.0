@@ -1,30 +1,30 @@
-const container = document.querySelector(".product-cards");
+const featuredContainer = document.querySelector(".featured");
+const preOrderContainer = document.querySelector(".preOrder");
+const newReleaseContainer = document.querySelector(".newReleases");
+const allProductsContainer = document.querySelector(".allProducts");
 
-const url = "https://dennisl.no/wp-json/wc/v3/products";
+const url = "https://dennisl.no/wp-json/wc/v3/products?per_page=20";
 const key = "ck_dd349ee9bd6f31714f886f1bb0ff8f51e6e86a48";
 const secret = "cs_58e5bd13e3e4cd911f0624f7bc94e7ee7089490e";
 
-const wooAPI = `${url}?consumer_key=${key}&consumer_secret=${secret}`;
+const wooAPI = `${url}&consumer_key=${key}&consumer_secret=${secret}`;
 
 async function getProducts() {
   try {
-    const response = await fetch(wooAPI);
-    const products = await response.json();
+    // await response then await json
+    const json = await (await fetch(wooAPI)).json();
 
-    console.log(products);
+    for (let i = 0; i < json.length; i++) {
+      // declarations
+      const productName = json[i].name;
+      const image = json[i].images[0].src;
+      const price = json[i].price_html;
+      const rating = json[i].attributes[0].options[0];
+      const category = json[i].categories[0].name;
 
-    for (let i = 0; i < products.length; i++) {
-      const productName = products[i].name;
-      const image = products[i].images[0].src;
-      const price = products[i].price_html;
-      const rating = products[i].attributes[0].options[0];
-
-      if (!products[i].name) {
-        continue;
-      }
-
-      console.log(productName);
-      container.innerHTML += `<div class="product-card">
+      if (json[i].featured) {
+        // if product is featured run this function:
+        featuredContainer.innerHTML += `<div class="product-card">
                 <a class="product-link" href="product.html"></a>
                     <div class="product-card__image-container">
                         <img src="${image}" alt="Game: ${productName}">
@@ -32,14 +32,64 @@ async function getProducts() {
                     <div class="product-card__content">
                         <p class="product-card__title text--medium"> ${productName} </p>
                         <div class="product-card__info">
-                            <p class="text--medium"> ${products.rating}</p>
-                            <p class="product-card__price text--medium">${price}</p>
+                            <p class="text--medium"> ${rating}</p>
+                            <p class="product-card__price text--medium">${price} USD</p>
                         </div>
                     </div>
             </div>`;
+      }
+      // if product is in category: 'PreOrder' run this function:
+      if (category === "PreOrder") {
+        preOrderContainer.innerHTML += `<div class="product-card">
+                <a class="product-link" href="product.html"></a>
+                    <div class="product-card__image-container">
+                        <img src="${image}" alt="Game: ${productName}">
+                    </div>
+                    <div class="product-card__content">
+                        <p class="product-card__title text--medium"> ${productName} </p>
+                        <div class="product-card__info">
+                            <p class="text--medium"> ${rating}</p>
+                            <p class="product-card__price text--medium">${price} USD</p>
+                        </div>
+                    </div>
+            </div>`;
+      }
+      // if product is in category: 'NewReleases' run this function:
+      if (category === "NewReleases") {
+        newReleaseContainer.innerHTML += `<div class="product-card">
+                <a class="product-link" href="product.html"></a>
+                    <div class="product-card__image-container">
+                        <img src="${image}" alt="Game: ${productName}">
+                    </div>
+                    <div class="product-card__content">
+                        <p class="product-card__title text--medium"> ${productName} </p>
+                        <div class="product-card__info">
+                            <p class="text--medium"> ${rating}</p>
+                            <p class="product-card__price text--medium">${price} USD</p>
+                        </div>
+                    </div>
+            </div>`;
+      }
+      // then run this function if product name is not undefined:
+      if (productName) {
+        allProductsContainer.innerHTML += `<div class="product-card">
+                <a class="product-link" href="product.html"></a>
+                    <div class="product-card__image-container">
+                        <img src="${image}" alt="Game: ${productName}">
+                    </div>
+                    <div class="product-card__content">
+                        <p class="product-card__title text--medium"> ${productName} </p>
+                        <div class="product-card__info">
+                            <p class="text--medium"> ${rating}</p>
+                            <p class="product-card__price text--medium">${price} USD</p>
+                        </div>
+                    </div>
+            </div>`;
+      }
     }
   } catch (error) {
-    container.innerHTML = createError(error);
+    // if there's an error - display error to user
+    featuredContainer.innerHTML = createError(error);
   }
 }
 
