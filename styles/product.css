@@ -5,7 +5,6 @@
 @import "imports/footer.css";
 @import "imports/loader.css";
 
-
 main {
   margin-top: 150px;
   width: 100%;
@@ -27,9 +26,14 @@ main {
   text-align: center;
 }
 
-.left img {
-  max-width: 100%;
-  margin-bottom: 1rem;
+.left {
+  position: relative;
+}
+
+.left .product-image {
+  background-size: cover;
+  height: 100%;
+  width: 100%;
 }
 
 .left h2 {
@@ -63,7 +67,7 @@ main {
   position: relative;
 }
 
-.right .to-cart {
+/* .right .to-cart {
   display: flex;
   flex-flow: column;
   position: absolute;
@@ -102,7 +106,7 @@ main {
 
 .to-cart button:focus {
   outline: none;
-}
+} */
 
 .btn {
   margin-top: 1.5rem;

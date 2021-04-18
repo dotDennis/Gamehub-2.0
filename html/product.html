@@ -8,22 +8,6 @@
     <link rel="stylesheet" href="../styles/product.css" />
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/3c371c70a6.js" crossorigin="anonymous"></script>
-    <!-- Hotjar Tracking Code for https://dennis-gamehub-v2.netlify.app/ -->
-    <script>
-      (function (h, o, t, j, a, r) {
-        h.hj =
-          h.hj ||
-          function () {
-            (h.hj.q = h.hj.q || []).push(arguments);
-          };
-        h._hjSettings = { hjid: 2308660, hjsv: 6 };
-        a = o.getElementsByTagName("head")[0];
-        r = o.createElement("script");
-        r.async = 1;
-        r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
-        a.appendChild(r);
-      })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
-    </script>
   </head>
   <body>
     <header>
@@ -34,7 +18,7 @@
           <div class="nav-center">
             <li><a href="../index.html">Home</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li><a href="marketplace.html">Buy</a></li>
+            <li><a class="current-page" href="marketplace.html">Buy</a></li>
             <li><a href="coming-soon.html">Sell</a></li>
           </div>
           <div class="nav-right">
@@ -46,7 +30,7 @@
                 <a href="checkout.html" class="cart"><i class="fas fa-sack-dollar cart-icon"></i></a>
               </li>
               <li>
-                <a class="current-page" href="sign-in.html"><i class="fas fa-user"></i></a>
+                <a href="sign-in.html"><i class="fas fa-user"></i></a>
               </li>
             </div>
           </div>
@@ -54,27 +38,8 @@
       </nav>
     </header>
     <main>
-      <a href="buy-games.html">return</a>
-      <div class="loader">
-        <!-- <div class="left">
-          <h2>Apex Legends</h2>
-          <img src="../images/games/ApexLegends.png" alt="Apex Legends thumbnail" />
-        </div>
-        <div class="right">
-          <h3>&#9733; &#9733; &#9733; &#9733; &#9734;</h3>
-          <h3 class="price">$35 USD</h3>
-          <div class="to-cart">
-            <button class="btn-plus"><i class="fas fa-plus-circle plus"></i></button>
-            <button class="btn-minus"><i class="fas fa-minus-circle minus"></i></button>
-          </div>
-          <p>
-            Apex Legends is a free-to-play battle royale game developed by Respawn Entertainment and published by Electronic Arts. It was released for Microsoft
-            Windows, PlayStation 4, and Xbox One in February 2019, and for Nintendo Switch in March 2021. Ports for Android and iOS are also scheduled to be
-            released by 2022. The game supports cross-platform play.
-          </p>
-        </div>
-        <a class="btn" href="checkout.html">Go to checkout</a> -->
-      </div>
+      <a href="marketplace.html">return</a>
+      <div class="loader"></div>
     </main>
     <footer>
       <div class="container">
@@ -108,9 +73,9 @@
       </div>
     </footer>
     <script src="../js/hamburgerMenu.js"></script>
-    <script src="../js/product.js"></script>
+    <script src="../js/product.js" type="module"></script>
 
-    <script src="../js/shoppingCart.js"></script>
-    <script src="../js/components/cartItems.js"></script>
+    <!-- <script src="../js/shoppingCart.js"></script>
+    <script src="../js/components/cartItems.js"></script> -->
   </body>
 </html>
