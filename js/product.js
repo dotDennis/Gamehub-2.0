@@ -61,13 +61,13 @@ function buildHtml(game) {
     <a class="btn" href="checkout.html">Go to checkout</a>`;
 }
 
-
-
 // adding and removing items from cart below
 
 var cartArray = [];
 
-cartArray = JSON.parse(localStorage.getItem("cartList"));
+if (JSON.parse(localStorage.getItem("cartList"))) {
+  cartArray = JSON.parse(localStorage.getItem("cartList"));
+}
 
 let listOfItems = [];
 
@@ -85,9 +85,6 @@ async function fetchGames() {
 }
 
 fetchGames();
-
-
-
 
 function addToCart(event) {
   const itemToAdd = listOfItems.find((item) => item.id === parseInt(id));
