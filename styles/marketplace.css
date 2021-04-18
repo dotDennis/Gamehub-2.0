@@ -97,6 +97,20 @@
   font-weight: 200px;
 }
 
+.add-to-cart {
+  margin: 10px auto;
+  padding: 10px 80px;
+  background-color: var(--darkestblue);
+  border-radius: 20px;
+  font-family: "Doubleplus", sans-serif;
+  font-weight: 200px;
+  font-size: 1rem;
+  color: var(--orange);
+  border: none;
+  z-index: 99;
+  cursor: pointer;
+}
+
 /*----- MEDIA QUERIES -----*/
 
 @media (max-width: 1000px) {

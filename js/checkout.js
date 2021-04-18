@@ -1,5 +1,9 @@
-// Import list and initiate it
-const cartArray = JSON.parse(localStorage.getItem("cartList"));
+// Import array and check for existing items
+let cartArray = [];
+
+if (JSON.parse(localStorage.getItem("cartList"))) {
+  cartArray = JSON.parse(localStorage.getItem("cartList"));
+}
 
 const cartContainer = document.querySelector(".cart-info");
 const cartTotal = document.querySelector(".total-price");
@@ -12,8 +16,6 @@ let total = 0;
 //   buildHtml(cartArray[j]);
 // }
 
-var removeItem = "";
-
 function buildHtml(game) {
   cartContainer.innerHTML = "";
   total = 0;
@@ -23,15 +25,16 @@ function buildHtml(game) {
     total += parseInt(game[j].price);
     cartTotal.innerHTML = `Total <span class="price"></span><b> $${total} USD</b>`;
   }
-  removeItem = document.querySelectorAll(".remove-cart-item");
-}
+  if (total === 0) {
+    cartTotal.innerHTML = "";
+  }
 
-buildHtml(cartArray);
+  // remove items from cart
+  let removeItem = document.querySelectorAll(".remove-cart-item");
+  Array.from(removeItem).forEach((button) => button.addEventListener("click", removeFromCart));
 
-removeItem.forEach(function (button) {
-  button.onclick = function (event) {
+  function removeFromCart() {
     console.log("attempting to remove item...");
-
     for (let i = 0; i < cartArray.length; i++) {
       if (cartArray[i].id === parseInt(event.target.dataset.product)) {
         cartArray.splice(i, 1);
@@ -44,5 +47,7 @@ removeItem.forEach(function (button) {
         return;
       }
     }
-  };
-});
+  }
+}
+
+buildHtml(cartArray);

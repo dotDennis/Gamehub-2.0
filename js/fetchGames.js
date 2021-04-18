@@ -12,13 +12,19 @@ const secret = "cs_58e5bd13e3e4cd911f0624f7bc94e7ee7089490e";
 
 const wooAPI = `${url}&consumer_key=${key}&consumer_secret=${secret}`;
 
+// declare the cart, and check for value in localStorage
+
+let cartArray = [];
+
+if (JSON.parse(localStorage.getItem("cartList"))) {
+  cartArray = JSON.parse(localStorage.getItem("cartList"));
+}
+
 // get json and create product cards (turn into functions**)
 async function getProducts() {
   try {
     // await response then await json
-    const json = await (await fetch(wooAPI)).json();
-
-    console.log(wooAPI);
+    var json = await (await fetch(wooAPI)).json();
 
     for (let i = 0; i < json.length; i++) {
       // declarations
@@ -41,7 +47,9 @@ async function getProducts() {
                             <p class="text--medium"> ${rating}</p>
                             <p class="product-card__price text--medium">${price} USD</p>
                         </div>
+                        
                     </div>
+                <button class="add-to-cart" data-product="${json[i].id}">Add to cart</button>
             </div>`;
       }
       // if product is in category: 'PreOrder' run this function:
@@ -58,6 +66,7 @@ async function getProducts() {
                             <p class="product-card__price text--medium">${price} USD</p>
                         </div>
                     </div>
+                <button class="add-to-cart" data-product="${json[i].id}">Add to cart</button>     
             </div>`;
       }
       // if product is in category: 'NewReleases' run this function:
@@ -74,9 +83,10 @@ async function getProducts() {
                             <p class="product-card__price text--medium">${price} USD</p>
                         </div>
                     </div>
+                <button class="add-to-cart" data-product="${json[i].id}">Add to cart</button>
             </div>`;
       }
-      // then run this function if product name is not undefined:
+      // then run this function (if product name is not 'false'):
       if (productName) {
         allProductsContainer.innerHTML += `<div class="product-card">
                 <a class="product-link" href="product.html?id=${json[i].id}"></a>
@@ -90,6 +100,7 @@ async function getProducts() {
                             <p class="product-card__price text--medium">${price} USD</p>
                         </div>
                     </div>
+                <button class="add-to-cart" data-product="${json[i].id}">Add to cart</button>
             </div>`;
       }
     }
@@ -97,7 +108,19 @@ async function getProducts() {
     // if there's an error - display error to user
     featuredContainer.innerHTML = createError(error);
   } finally {
+    // remove loader
     loader.classList.remove("loader");
+
+    // add items to cart
+
+    const buttons = document.querySelectorAll(".add-to-cart");
+    buttons.forEach(function (button) {
+      button.onclick = function (event) {
+        const itemToAdd = json.find((item) => item.id === parseInt(event.target.dataset.product));
+        cartArray.push(itemToAdd);
+        localStorage.setItem("cartList", JSON.stringify(cartArray));
+      };
+    });
   }
 }
 
