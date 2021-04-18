@@ -69,7 +69,7 @@ hr {
   width: 60%;
   background: var(--darkblue);
   color: var(--lightblue);
-  font-size: 1.5vw;
+  font-size: 1rem;
   font-weight: lighter;
   border-radius: 45px;
   padding: 1rem 0;
@@ -95,6 +95,9 @@ hr {
 @media screen and (min-width: 1000px) {
   .checkout {
     max-width: 60%;
+  }
+  .btn {
+    font-size: 1.5rem;
   }
 }
 
