@@ -4,6 +4,7 @@ const preOrderContainer = document.querySelector(".preOrder");
 const newReleaseContainer = document.querySelector(".newReleases");
 const allProductsContainer = document.querySelector(".allProducts");
 const loader = document.querySelector(".loader");
+const cartCounter = document.querySelector(".cart-count");
 
 // select the API & add keys
 const url = "https://dennisl.no/wp-json/wc/v3/products?per_page=20";
@@ -13,7 +14,6 @@ const secret = "cs_58e5bd13e3e4cd911f0624f7bc94e7ee7089490e";
 const wooAPI = `${url}&consumer_key=${key}&consumer_secret=${secret}`;
 
 // declare the cart, and check for value in localStorage
-
 let cartArray = [];
 
 if (JSON.parse(localStorage.getItem("cartList"))) {
@@ -119,6 +119,8 @@ async function getProducts() {
         const itemToAdd = json.find((item) => item.id === parseInt(event.target.dataset.product));
         cartArray.push(itemToAdd);
         localStorage.setItem("cartList", JSON.stringify(cartArray));
+        cartCounter.innerHTML = cartArray.length;
+        cartCounter.style.display = "block";
       };
     });
   }
@@ -128,4 +130,10 @@ getProducts();
 
 function createError(error) {
   return `<div class="error"><p>${error}</p></div>`;
+}
+
+if (cartArray.length > 0) {
+  cartCounter.innerHTML = cartArray.length;
+} else {
+  cartCounter.style.display = "none";
 }

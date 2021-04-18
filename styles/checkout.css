@@ -62,15 +62,36 @@ hr {
   text-align: right;
 }
 
-@media screen and (min-width:1000px) {
-    .checkout {
-        max-width: 60%;
-    }
+.btn {
+  display: flex;
+  margin: 3rem auto 0 auto;
+  background: var(--darkblue);
+  color: var(--lightblue);
+  font-size: 1.5vw;
+  font-weight: lighter;
+  border-radius: 45px;
+  padding: 1.5vw 1vw;
+  flex-direction: column;
+  display: flex;
+  text-decoration: none;
+  border: 0;
+  cursor: pointer;
+  transition: 0.3s ease;
 }
 
+.btn:hover {
+  transform: scale(1.1);
+  color: var(--orange);
+}
 
-@media screen and (min-width:1400px) {
-    .checkout {
-        max-width: 50%;
-    }
+@media screen and (min-width: 1000px) {
+  .checkout {
+    max-width: 60%;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .checkout {
+    max-width: 50%;
+  }
 }

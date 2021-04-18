@@ -16,6 +16,8 @@ let total = 0;
 //   buildHtml(cartArray[j]);
 // }
 
+const cartCounter = document.querySelector(".cart-count");
+
 function buildHtml(game) {
   cartContainer.innerHTML = "";
   total = 0;
@@ -41,6 +43,12 @@ function buildHtml(game) {
         localStorage.setItem("cartList", JSON.stringify(cartArray));
 
         console.log("item removed!");
+        if (cartArray.length > 0) {
+          cartCounter.innerHTML = cartArray.length;
+          cartCounter.style.display = "block";
+        } else {
+          cartCounter.style.display = "none";
+        }
 
         buildHtml(cartArray);
         removeItem = document.querySelectorAll(".remove-cart-item");
@@ -51,3 +59,9 @@ function buildHtml(game) {
 }
 
 buildHtml(cartArray);
+
+if (cartArray.length > 0) {
+  cartCounter.innerHTML = cartArray.length;
+} else {
+  cartCounter.style.display = "none";
+}

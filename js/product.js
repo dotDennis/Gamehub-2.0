@@ -86,11 +86,19 @@ async function fetchGames() {
 
 fetchGames();
 
+const cartCounter = document.querySelector(".cart-count");
+
 function addToCart(event) {
   const itemToAdd = listOfItems.find((item) => item.id === parseInt(id));
   cartArray.push(itemToAdd);
   localStorage.setItem("cartList", JSON.stringify(cartArray));
   console.log(cartArray);
+  if (cartArray.length > 0) {
+    cartCounter.innerHTML = cartArray.length;
+    cartCounter.style.display = "block";
+  } else {
+    cartCounter.style.display = "none";
+  }
 }
 
 function removeFromCart(game) {
@@ -98,7 +106,20 @@ function removeFromCart(game) {
     if (cartArray[i].id === parseInt(id)) {
       cartArray.splice(i, 1);
       localStorage.setItem("cartList", JSON.stringify(cartArray));
+      console.log(cartArray);
+      if (cartArray.length > 0) {
+        cartCounter.innerHTML = cartArray.length;
+        cartCounter.style.display = "block";
+      } else {
+        cartCounter.style.display = "none";
+      }
       return;
     }
   }
+}
+
+if (cartArray.length > 0) {
+  cartCounter.innerHTML = cartArray.length;
+} else {
+  cartCounter.style.display = "none";
 }
