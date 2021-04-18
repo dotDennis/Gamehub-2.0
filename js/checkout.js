@@ -30,11 +30,14 @@ buildHtml(cartArray);
 
 removeItem.forEach(function (button) {
   button.onclick = function (event) {
-    console.log(event.target.dataset.product);
+    console.log("attempting to remove item...");
+
     for (let i = 0; i < cartArray.length; i++) {
       if (cartArray[i].id === parseInt(event.target.dataset.product)) {
         cartArray.splice(i, 1);
         localStorage.setItem("cartList", JSON.stringify(cartArray));
+
+        console.log("item removed!");
 
         buildHtml(cartArray);
         removeItem = document.querySelectorAll(".remove-cart-item");
