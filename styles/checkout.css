@@ -64,17 +64,16 @@ hr {
 
 .btn {
   display: flex;
-  margin: 3rem auto 0 auto;
+  justify-content: center;
+  margin: 3rem auto 1rem auto;
+  width: 60%;
   background: var(--darkblue);
   color: var(--lightblue);
   font-size: 1.5vw;
   font-weight: lighter;
   border-radius: 45px;
-  padding: 1.5vw 1vw;
-  flex-direction: column;
-  display: flex;
-  text-decoration: none;
-  border: 0;
+  padding: 1rem 0;
+  border: none;
   cursor: pointer;
   transition: 0.3s ease;
 }
@@ -82,6 +81,15 @@ hr {
 .btn:hover {
   transform: scale(1.1);
   color: var(--orange);
+}
+
+.remove-cart-item {
+  border: none;
+  background: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  font-family: "gumela", sans-serif;
+  color: var(--darkblue);
 }
 
 @media screen and (min-width: 1000px) {
