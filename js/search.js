@@ -15,9 +15,9 @@ if (!search) {
   search = "";
 }
 
-const url = "https://dennisl.no/wp-json/wc/v3/products";
-const key = "ck_dd349ee9bd6f31714f886f1bb0ff8f51e6e86a48";
-const secret = "cs_58e5bd13e3e4cd911f0624f7bc94e7ee7089490e";
+const url = "https://gamehub-api.dennisl.no/wp-json/wc/v3/products";
+const key = "ck_41dc2be223a446796ff7d043052badfbbdd3dc4e";
+const secret = "cs_02e2e485a33916ce70229285abcc7501887ff2c9";
 
 const wooAPI = `${url}?search=${search}&per_page=20&consumer_key=${key}&consumer_secret=${secret}`;
 
