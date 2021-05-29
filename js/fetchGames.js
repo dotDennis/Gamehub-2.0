@@ -33,8 +33,6 @@ async function getProducts() {
       const image = json[i].images[0].src;
       const price = json[i].price_html;
       const rating = json[i].attributes[0].options[0];
-      const category = json[i].categories[0].name;
-      const secondCategory = json[i].categories[1].name;
 
       if (json[i].featured) {
         // if product is featured run this function:
@@ -54,9 +52,14 @@ async function getProducts() {
                 <button class="add-to-cart" data-product="${json[i].id}">Add to cart</button>
             </div>`;
       }
-      // if product is in category: 'PreOrder' run this function:
-      if (secondCategory === "PreOrder") {
-        preOrderContainer.innerHTML += `<div class="product-card">
+      // if there's more than 1 category, check name of it.
+      if (json[i].tags.length) {
+        console.log(json[i]);
+        const tag = json[i].tags[0].name;
+
+        // if product is in category: 'PreOrder' run this function:
+        if (tag === "preOrder") {
+          preOrderContainer.innerHTML += `<div class="product-card">
                 <a class="product-link" href="product.html?id=${json[i].id}"></a>
                     <div class="product-card__image-container">
                         <img src="${image}" alt="Game: ${productName}">
@@ -70,10 +73,10 @@ async function getProducts() {
                     </div>
                 <button class="add-to-cart" data-product="${json[i].id}">Add to cart</button>     
             </div>`;
-      }
-      // if product is in category: 'NewReleases' run this function:
-      if (secondCategory === "NewReleases") {
-        newReleaseContainer.innerHTML += `<div class="product-card">
+        }
+        // if product is in category: 'NewReleases' run this function:
+        if (tag === "newReleases") {
+          newReleaseContainer.innerHTML += `<div class="product-card">
                 <a class="product-link" href="product.html?id=${json[i].id}"></a>
                     <div class="product-card__image-container">
                         <img src="${image}" alt="Game: ${productName}">
@@ -87,8 +90,9 @@ async function getProducts() {
                     </div>
                 <button class="add-to-cart" data-product="${json[i].id}">Add to cart</button>
             </div>`;
+        }
       }
-      // then run this function (if product name is not 'false'):
+      // then run this function (if product name is not 'false'), add it to the 'all games' list:
       if (productName) {
         allProductsContainer.innerHTML += `<div class="product-card">
                 <a class="product-link" href="product.html?id=${json[i].id}"></a>
@@ -109,6 +113,7 @@ async function getProducts() {
   } catch (error) {
     // if there's an error - display error to user
     featuredContainer.innerHTML = createError(error);
+    console.log(error);
   } finally {
     // remove loader
     loader.classList.remove("loader");

@@ -78,9 +78,7 @@ let listOfItems = [];
 
 async function fetchGames() {
   try {
-    const response = await fetch(
-      "https://dennisl.no/wp-json/wc/v3/products?per_page=20&consumer_key=ck_dd349ee9bd6f31714f886f1bb0ff8f51e6e86a48&consumer_secret=cs_58e5bd13e3e4cd911f0624f7bc94e7ee7089490e"
-    );
+    const response = await fetch(`${url}?per_page=20&consumer_key=${key}&consumer_secret=${secret}`);
     const json = await response.json();
     listOfItems = json;
     return;
