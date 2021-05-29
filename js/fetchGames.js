@@ -34,6 +34,7 @@ async function getProducts() {
       const price = json[i].price_html;
       const rating = json[i].attributes[0].options[0];
       const category = json[i].categories[0].name;
+      const secondCategory = json[i].categories[1].name;
 
       if (json[i].featured) {
         // if product is featured run this function:
@@ -54,7 +55,7 @@ async function getProducts() {
             </div>`;
       }
       // if product is in category: 'PreOrder' run this function:
-      if (category === "PreOrder") {
+      if (secondCategory === "PreOrder") {
         preOrderContainer.innerHTML += `<div class="product-card">
                 <a class="product-link" href="product.html?id=${json[i].id}"></a>
                     <div class="product-card__image-container">
@@ -71,7 +72,7 @@ async function getProducts() {
             </div>`;
       }
       // if product is in category: 'NewReleases' run this function:
-      if (category === "NewReleases") {
+      if (secondCategory === "NewReleases") {
         newReleaseContainer.innerHTML += `<div class="product-card">
                 <a class="product-link" href="product.html?id=${json[i].id}"></a>
                     <div class="product-card__image-container">
