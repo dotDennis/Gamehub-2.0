@@ -1,22 +1,22 @@
 /* import fonts */
 @font-face {
-  font-family: Commando;
-  src: local("Commando") url("../../fonts/commando.ttf");
+  font-family: "Commando";
+  src: url("../../fonts/commando.ttf");
 }
 
 @font-face {
-  font-family: Avenir;
-  src: local("Avenir") url("../../fonts/AvenirLTStd-Roman.otf");
+  font-family: "Avenir";
+  src: url("../../fonts/AvenirLTStd-Roman.otf");
 }
 
 @font-face {
-  font-family: Doubleplus;
-  src: local("Doubleplus") url("../../fonts/Doubleplus-6Yy4g.ttf");
+  font-family: "Doubleplus";
+  src: url("../../fonts/Doubleplus-6Yy4g.ttf");
 }
 
 @font-face {
-  font-family: Gumela;
-  src: local("Gumela") url("../../fonts/Gumela.ttf");
+  font-family: "Gumela";
+  src: url("../../fonts/Gumela.ttf");
 }
 
 /* Resets */
