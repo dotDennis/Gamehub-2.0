@@ -3,10 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Sign in to view your listed games, purchase history, or to sell a game on GameHub"
-    />
+    <meta name="description" content="Sign in to view your listed games, purchase history, or to sell a game on GameHub" />
     <title>GameHub | Sign in</title>
     <link rel="stylesheet" href="../styles/sign-in.css" />
     <!-- Font Awesome -->
@@ -14,54 +11,58 @@
   </head>
   <body>
     <header>
-      <nav>
-        <a href="/"><img class="navlogo" src="../images/logo.png" alt="Gamehub logo" /></a>
-        <button class="ham-menu closed"><i class="fas fa-bars"></i></button>
-        <ul class="nav-ul">
-          <div class="nav-center">
-            <li><a href="/">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="marketplace.html">Buy</a></li>
+      <nav class="menu">
+        <a class="menu__link" href="/"><img class="menu__logo" src="../images/logo.png" alt="Gamehub logo" /></a>
+        <button class="menu__hamburger closed"><i class="fas fa-bars"></i></button>
+        <ul class="menu__list menu__ul">
+          <div class="menu__center">
+            <li class="menu__item"><a class="menu__link" href="/">Home</a></li>
+            <li class="menu__item"><a class="menu__link" href="about.html">About</a></li>
+            <li class="menu__item"><a class="menu__link" href="contact.html">Contact</a></li>
+            <li class="menu__item"><a class="menu__link" href="marketplace.html">Buy</a></li>
           </div>
-          <div class="nav-right">
-            <div class="nav-right-container">
-              <li>
-                <a href="Search-results.html"><i class="fas fa-search"></i></a>
+          <div class="menu__right">
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a class="menu__link" href="search-results.html"><i class="fas fa-search"></i></a>
               </li>
-              <li>
-                <a class="cart" href="checkout.html"
-                  ><span class="cart-count"></span><i class="fas fa-sack-dollar"></i
-                ></a>
+              <li class="menu__item">
+                <a class="menu__link counter" href="checkout.html"><span class="menu__counter"></span><i class="fas fa-sack-dollar"></i></a>
               </li>
-              <li>
-                <a class="current-page" href="sign-in.html"><i class="fas fa-user"></i></a>
+              <li class="menu__item">
+                <a class="menu__link current" href="sign-in.html"><i class="fas fa-user"></i></a>
               </li>
-            </div>
+            </ul>
           </div>
         </ul>
       </nav>
     </header>
     <main>
-      <section class="signin">
-        <div class="signin-container">
-          <h1 class="signin-header">Sign-in</h1>
-          <div class="signin-header--underline"></div>
-          <form class="signin-form" method="POST">
-            <input type="text" class="signin-form-text" placeholder="Username" />
-            <input type="password" class="signin-form-text" placeholder="Password" />
-            <a class="signin-form-btn" href="account.html"><input value="Sign-in" /></a>
-          </form>
-          <div class="signin-support">
-            <a class="signin-support-txt" href="#">not a member yet?</a>
-            <a class="signin-support-txt" href="#">forgot your password?</a>
-            <p class="signin-update-txt">this page + account.html page will undergo an update.</p>
+      <section class="container">
+        <h1 class="container__title">Sign-in</h1>
+        <span class="container__seperator"></span>
+        <form class="container__form" method="POST">
+          <div>
+            <label class="container__label" for="username">Username</label>
+            <input class="container__input" name="username" />
           </div>
+          <div>
+            <label class="container__label" for="password">Password</label>
+            <input class="container__input" name="password" class="container__input" />
+          </div>
+          <p class="container__error">Username & password did not match. (Enter a min of 1 character in each field)</p>
+          <button type="button" class="container__btn" href="account.html">Sign-in</button>
+        </form>
+        <div class="container__help">
+          <p class="container__warning">Please do not enter real credentials. This is an unsecure login.</p>
+          <a class="container__text" href="#">not a member yet?</a>
+          <a class="container__text" href="#">forgot your password?</a>
         </div>
       </section>
     </main>
 
     <script src="../js/hamburgerMenu.js"></script>
     <script src="../js/components/cartCount.js"></script>
+    <script src="../js/signIn.js"></script>
   </body>
 </html>

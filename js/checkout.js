@@ -16,7 +16,7 @@ let total = 0;
 //   buildHtml(cartArray[j]);
 // }
 
-const cartCounter = document.querySelector(".cart-count");
+const cartCounter = document.querySelector(".menu__counter");
 
 function buildHtml(game) {
   cartContainer.innerHTML = "";

@@ -1,8 +1,4 @@
 import { buildContactError } from "./components/build.js";
-//  messageContainer.style.display = "block";
-// messageContainer.innerHTML =
-
-//  new new new new new new new new
 
 // declare containers & elements
 const form = document.querySelector("#contact-form");
@@ -40,8 +36,6 @@ const formInputs = () => [form["fullName"], form["email"], form["message"]];
 // credit to Kasper on the true/false check inside a variable!
 function errorStyling(input) {
   const target = input.target ? input.composedPath()[0] : form[input];
-  console.log(target);
-
   target.style.borderBottom = "2px solid var(--warn)";
   target.nextElementSibling.style.display = "block";
 }
@@ -60,9 +54,6 @@ function isInputValid(inputName) {
   }
   if (inputName === "email") {
     return validateEmail(email);
-  }
-  if (inputName === "subject") {
-    return checkLength(subject, 15);
   }
   if (inputName === "message") {
     return checkLength(message, 25);

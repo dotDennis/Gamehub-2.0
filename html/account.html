@@ -3,10 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="View your account information on GameHub. Change your preferences & other settings."
-    />
+    <meta name="description" content="View your account information on GameHub. Change your preferences & other settings." />
     <title>GameHub | Your Account</title>
     <link rel="stylesheet" href="../styles/account.css" />
     <!-- Font Awesome -->
@@ -14,30 +11,28 @@
   </head>
   <body>
     <header>
-      <nav>
-        <a href="/"><img class="navlogo" src="../images/logo.png" alt="Gamehub logo" /></a>
-        <button class="ham-menu closed"><i class="fas fa-bars"></i></button>
-        <ul class="nav-ul">
-          <div class="nav-center">
-            <li><a href="/">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="marketplace.html">Buy</a></li>
+      <nav class="menu">
+        <a class="menu__link" href="/"><img class="menu__logo" src="../images/logo.png" alt="Gamehub logo" /></a>
+        <button class="menu__hamburger closed"><i class="fas fa-bars"></i></button>
+        <ul class="menu__list menu__ul">
+          <div class="menu__center">
+            <li class="menu__item"><a class="menu__link" href="/">Home</a></li>
+            <li class="menu__item"><a class="menu__link" href="about.html">About</a></li>
+            <li class="menu__item"><a class="menu__link" href="contact.html">Contact</a></li>
+            <li class="menu__item"><a class="menu__link" href="marketplace.html">Buy</a></li>
           </div>
-          <div class="nav-right">
-            <div class="nav-right-container">
-              <li>
-                <a href="Search-results.html"><i class="fas fa-search"></i></a>
+          <div class="menu__right">
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a class="menu__link" href="search-results.html"><i class="fas fa-search"></i></a>
               </li>
-              <li>
-                <a class="cart" href="checkout.html"
-                  ><span class="cart-count"></span><i class="fas fa-sack-dollar"></i
-                ></a>
+              <li class="menu__item">
+                <a class="menu__link counter" href="checkout.html"><span class="menu__counter"></span><i class="fas fa-sack-dollar"></i></a>
               </li>
-              <li>
-                <a class="current-page" href="sign-in.html"><i class="fas fa-user"></i></a>
+              <li class="menu__item">
+                <a class="menu__link current" href="sign-in.html"><i class="fas fa-user"></i></a>
               </li>
-            </div>
+            </ul>
           </div>
         </ul>
       </nav>
@@ -47,7 +42,7 @@
         <img src="../images/person.png" alt="" />
         <div class="topleft">
           <h2>Username</h2>
-          <p>User1234</p>
+          <p class="username">User1234</p>
           <h2>Level</h2>
           <p>56 buyer</p>
           <p>23 seller</p>
@@ -68,6 +63,7 @@
     <footer>
       <p>&copy; Copyright 2021 <strong>Gamehub</strong>. All rights reserved.</p>
     </footer>
+    <script src="../js/account.js"></script>
     <script src="../js/hamburgerMenu.js"></script>
     <script src="../js/components/cartCount.js"></script>
   </body>

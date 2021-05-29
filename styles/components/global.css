@@ -53,7 +53,7 @@ header {
   max-height: 100px;
 }
 
-nav {
+.menu {
   position: fixed;
   top: 0;
   width: 100%;
@@ -67,32 +67,30 @@ nav {
   z-index: 100;
 }
 
-.nav-ul.show {
-  display: flex;
-  left: 0;
-  flex-flow: column wrap;
-  align-items: center;
-  justify-content: center;
-  height: calc(100vh - 100px);
-  transition: left linear 0.3s;
-}
-
-.nav-ul {
+.menu__ul {
   position: fixed;
   top: 100px;
   display: none;
   left: -500px;
   background: var(--darkblue);
   width: 100%;
+}
+
+.menu__ul.open {
+  display: flex;
+  left: 0;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 100px);
+}
+
+.menu__list {
   list-style: none;
   text-align: center;
 }
 
-.nav-ul div {
-  display: block;
-}
-
-.nav-ul div li a {
+.menu__link {
   color: var(--orange);
   text-decoration: none;
   display: block;
@@ -101,11 +99,11 @@ nav {
   font-size: 1.75em;
 }
 
-.current-page {
+.current {
   position: relative;
 }
 
-.current-page::after {
+.current::after {
   content: "";
   position: absolute;
   width: 80%;
@@ -117,12 +115,12 @@ nav {
   z-index: 100;
 }
 
-.navlogo {
+.menu__logo {
   transform: scale(0.85);
   transition: 0.3s ease;
 }
 
-.ham-menu {
+.menu__hamburger {
   background-color: transparent;
   display: block;
   border: none;
@@ -131,15 +129,15 @@ nav {
   cursor: pointer;
 }
 
-.ham-menu:focus {
+.menu__hamburger {
   outline: none;
 }
 
-.cart {
+.counter {
   position: relative;
 }
 
-.cart-count {
+.menu__counter {
   font-family: "Avenir";
   position: absolute;
   top: 0;
@@ -153,12 +151,12 @@ nav {
 }
 
 /*-------- HOVER EFFECTS ---------*/
-.nav-ul div li a:hover {
+.menu__link:hover {
   transform: scale(1.1);
   transition: 0.2s ease;
 }
 
-.navlogo:hover {
+.menu__logo:hover {
   transform: scale(0.9);
   transition: 0.3s ease;
 }
@@ -166,34 +164,34 @@ nav {
 /* -------- MEDIA QUERIES --------- */
 
 @media screen and (min-width: 1000px) {
-  nav {
+  .menu {
     padding: 0 25px;
   }
-  .ham-menu {
+  .menu__hamburger {
     display: none;
   }
-  .nav-ul {
+  .menu__list {
     position: unset;
     display: flex;
     justify-content: space-between;
     background: none;
   }
-  .nav-ul div {
+  .menu__list div {
     display: flex;
     flex-flow: row nowrap;
   }
-  .nav-ul .nav-center {
+  .menu__center {
     margin-left: 27%;
   }
-  .nav-ul div li a {
+  .menu__link {
     color: var(--darkblue);
     margin: 0px 1rem;
   }
-  .current-page::after {
+  .current::after {
     width: 100%;
     background: var(--darkblue);
   }
-  .cart-count {
+  .menu__counter {
     color: var(--orange);
     border: 2px solid var(--darkblue);
     background: var(--darkblue);
@@ -204,13 +202,13 @@ nav {
 }
 
 @media screen and (min-width: 1200px) {
-  .nav-ul .nav-center {
+  .menu__center {
     margin-left: 32%;
   }
 }
 
 @media screen and (min-width: 1500px) {
-  .nav-ul .nav-center {
+  .menu__center {
     margin-left: 38%;
   }
 }

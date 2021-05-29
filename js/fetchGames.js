@@ -7,7 +7,7 @@ const newReleaseContainer = document.querySelector(".newReleases");
 const allProductsContainer = document.querySelector(".allProducts");
 const errorContainer = document.querySelector("#status");
 const loader = document.querySelector(".loader");
-const cartCounter = document.querySelector(".cart-count");
+const cartCounter = document.querySelector(".menu__counter");
 
 // select the API & add keys
 const url = "https://gamehub-api.dennisl.no/wp-json/wc/v3/products?per_page=20";
@@ -28,9 +28,8 @@ async function getProducts() {
   try {
     // await response then await json
     var json = await (await fetch(wooAPI)).json();
-    console.log(json);
 
-    for (let i = 0; i < 99; i++) {
+    for (let i = 0; i < json.length; i++) {
       // declarations
       const productName = json[i].name;
       const image = json[i].images[0].src;
@@ -57,7 +56,6 @@ async function getProducts() {
       }
       // if there's more than 1 category, check name of it.
       if (json[i].tags.length) {
-        console.log(json[i]);
         const tag = json[i].tags[0].name;
 
         // if product is in category: 'PreOrder' run this function:

@@ -11,30 +11,28 @@
   </head>
   <body>
     <header>
-      <nav>
-        <a href="/"><img class="navlogo" src="../images/logo.png" alt="Gamehub logo" /></a>
-        <button class="ham-menu closed"><i class="fas fa-bars"></i></button>
-        <ul class="nav-ul">
-          <div class="nav-center">
-            <li><a href="/">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a class="current-page" href="contact.html">Contact</a></li>
-            <li><a href="marketplace.html">Buy</a></li>
+      <nav class="menu">
+        <a class="menu__link" href="/"><img class="menu__logo" src="../images/logo.png" alt="Gamehub logo" /></a>
+        <button class="menu__hamburger closed"><i class="fas fa-bars"></i></button>
+        <ul class="menu__list menu__ul">
+          <div class="menu__center">
+            <li class="menu__item"><a class="menu__link" href="/">Home</a></li>
+            <li class="menu__item"><a class="menu__link" href="about.html">About</a></li>
+            <li class="menu__item"><a class="menu__link current" href="contact.html">Contact</a></li>
+            <li class="menu__item"><a class="menu__link" href="marketplace.html">Buy</a></li>
           </div>
-          <div class="nav-right">
-            <div class="nav-right-container">
-              <li>
-                <a href="Search-results.html"><i class="fas fa-search"></i></a>
+          <div class="menu__right">
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a class="menu__link" href="search-results.html"><i class="fas fa-search"></i></a>
               </li>
-              <li>
-                <a class="cart" href="checkout.html"
-                  ><span class="cart-count"></span><i class="fas fa-sack-dollar"></i
-                ></a>
+              <li class="menu__item">
+                <a class="menu__link counter" href="checkout.html"><span class="menu__counter"></span><i class="fas fa-sack-dollar"></i></a>
               </li>
-              <li>
-                <a href="sign-in.html"><i class="fas fa-user"></i></a>
+              <li class="menu__item">
+                <a class="menu__link" href="sign-in.html"><i class="fas fa-user"></i></a>
               </li>
-            </div>
+            </ul>
           </div>
         </ul>
       </nav>

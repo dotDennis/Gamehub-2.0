@@ -9,33 +9,30 @@
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/3c371c70a6.js" crossorigin="anonymous"></script>
   </head>
-
   <body>
     <header>
-      <nav>
-        <a href="/"><img class="navlogo" src="../images/logo.png" alt="Gamehub logo" /></a>
-        <button class="ham-menu closed"><i class="fas fa-bars"></i></button>
-        <ul class="nav-ul">
-          <div class="nav-center">
-            <li><a href="/">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="marketplace.html">Buy</a></li>
+      <nav class="menu">
+        <a class="menu__link" href="/"><img class="menu__logo" src="../images/logo.png" alt="Gamehub logo" /></a>
+        <button class="menu__hamburger closed"><i class="fas fa-bars"></i></button>
+        <ul class="menu__list menu__ul">
+          <div class="menu__center">
+            <li class="menu__item"><a class="menu__link" href="/">Home</a></li>
+            <li class="menu__item"><a class="menu__link" href="about.html">About</a></li>
+            <li class="menu__item"><a class="menu__link" href="contact.html">Contact</a></li>
+            <li class="menu__item"><a class="menu__link" href="marketplace.html">Buy</a></li>
           </div>
-          <div class="nav-right">
-            <div class="nav-right-container">
-              <li>
-                <a href="Search-results.html"><i class="fas fa-search"></i></a>
+          <div class="menu__right">
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a class="menu__link" href="search-results.html"><i class="fas fa-search"></i></a>
               </li>
-              <li>
-                <a class="current-page cart" href="checkout.html"
-                  ><span class="cart-count"></span><i class="fas fa-sack-dollar cart-icon"></i
-                ></a>
+              <li class="menu__item">
+                <a class="menu__link counter current" href="checkout.html"><span class="menu__counter"></span><i class="fas fa-sack-dollar"></i></a>
               </li>
-              <li>
-                <a href="sign-in.html"><i class="fas fa-user"></i></a>
+              <li class="menu__item">
+                <a class="menu__link" href="sign-in.html"><i class="fas fa-user"></i></a>
               </li>
-            </div>
+            </ul>
           </div>
         </ul>
       </nav>
@@ -86,9 +83,7 @@
               <input type="text" id="card-expy" name="card-expy" placeholder="yyyy" />
               <label for="card-ccv">CCV</label>
               <input type="text" id="card-ccv" name="card-ccv" placeholder="xxx" />
-              <label for="sameadr"
-                ><input type="checkbox" checked="checked" name="sameadr" />Shipping adress same as billing</label
-              >
+              <label for="sameadr"><input type="checkbox" checked="checked" name="sameadr" />Shipping adress same as billing</label>
               <button type="submit" class="btn">Checkout</button>
               <p>no verification as of right now</p>
             </div>
