@@ -1,0 +1,23 @@
+.error {
+  display: flex;
+  justify-content: center;
+  background: var(--darkblue);
+  box-shadow: 0 0 7px var(--primary-op90);
+  width: 90%;
+  padding: 1rem;
+  margin: 0 auto;
+  border-radius: 500rem; /* stopid high =) for nice rounded effect */
+}
+
+.error-txt {
+  color: var(--warn);
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+@media screen and (min-width: 1000px) {
+  .error {
+    width: 60%;
+  }
+}

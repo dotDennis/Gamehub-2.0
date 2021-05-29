@@ -1,8 +1,11 @@
+import { buildError } from "./components/build.js";
+
 // select containers
 const featuredContainer = document.querySelector(".featured");
 const preOrderContainer = document.querySelector(".preOrder");
 const newReleaseContainer = document.querySelector(".newReleases");
 const allProductsContainer = document.querySelector(".allProducts");
+const errorContainer = document.querySelector("#status");
 const loader = document.querySelector(".loader");
 const cartCounter = document.querySelector(".cart-count");
 
@@ -27,7 +30,7 @@ async function getProducts() {
     var json = await (await fetch(wooAPI)).json();
     console.log(json);
 
-    for (let i = 0; i < json.length; i++) {
+    for (let i = 0; i < 99; i++) {
       // declarations
       const productName = json[i].name;
       const image = json[i].images[0].src;
@@ -112,7 +115,8 @@ async function getProducts() {
     }
   } catch (error) {
     // if there's an error - display error to user
-    featuredContainer.innerHTML = createError(error);
+    errorContainer.innerHTML = buildError(error);
+    errorContainer.classList.add("error");
     console.log(error);
   } finally {
     // remove loader
@@ -134,10 +138,6 @@ async function getProducts() {
 }
 
 getProducts();
-
-function createError(error) {
-  return `<div class="error"><p>${error}</p></div>`;
-}
 
 if (cartArray.length > 0) {
   cartCounter.innerHTML = cartArray.length;

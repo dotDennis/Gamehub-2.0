@@ -10,17 +10,13 @@ const ID = params.get("post");
 
 function buildError() {
   return `
-      <section>
-        <div class="status">
-          <p class="status-txt">Oops! Something went wrong while building the site. Please contact Dennis if this issue persists</p>
-        </div>
-      </section>`;
+  <p class="error-txt">Oops! Something went wrong while building the site. Please contact us if this issue persists</p>
+  `;
 }
 function buildContactError(errorMessage) {
   return `
-        <div class="status">
-          <p class="status-txt">Oops! ${errorMessage}</p>
-        </div>`;
+  <p class="error-txt">Oops! ${errorMessage}</p>
+  `;
 }
 
 export { buildError, buildContactError, POSTS, ID };

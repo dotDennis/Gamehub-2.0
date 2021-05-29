@@ -46,8 +46,8 @@
         </div>
       </div>
       <section class="contact">
-        <div id="success-message"></div>
-        <div id="error-message"></div>
+        <!-- add error/success class on action -->
+        <div id="status"></div>
         <form id="contact-form">
           <div>
             <label for="fullName">Full name*</label>
@@ -64,7 +64,7 @@
             <textarea name="message" class="contact-form-text" id="message"></textarea>
             <div class="error-message" id="messageError">Please enter a minimum of 25 characters.</div>
           </div>
-          <button type="button" class="contact-form-btn" id="form-button">Send</button>
+          <button type="button" class="contact-form-btn send" id="form-button">Send</button>
         </form>
       </section>
     </main>

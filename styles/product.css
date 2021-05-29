@@ -1,5 +1,6 @@
 @import "components/global.css";
 @import "components/loader.css";
+@import "components/error.css";
 
 main {
   margin-top: 150px;

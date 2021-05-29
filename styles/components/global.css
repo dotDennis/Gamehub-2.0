@@ -245,3 +245,30 @@ footer {
   margin: 15% 0 2rem 0;
   text-align: center;
 }
+
+/* button stylings */
+
+button.send {
+  padding: 1rem 3rem;
+  font-size: 26px;
+  font-family: "Avenir", sans-serif;
+  color: var(--lightblue);
+  background: var(--darkblue);
+  border: none;
+  border-radius: 3000rem;
+  cursor: pointer;
+  display: flex;
+  margin: 2rem auto 0 auto;
+}
+
+.send:hover {
+  color: var(--orange);
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+@media screen and (min-width: 750px) {
+  button.send {
+    margin: 2rem 0;
+  }
+}

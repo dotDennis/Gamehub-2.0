@@ -6,9 +6,8 @@ import { buildContactError } from "./components/build.js";
 
 // declare containers & elements
 const form = document.querySelector("#contact-form");
-const successContainer = document.querySelector("#success-message");
 const submitButton = document.querySelector("#form-button");
-const errorContainer = document.querySelector("#error-message");
+const statusContainer = document.querySelector("#status");
 
 // api url etc.
 
@@ -114,13 +113,13 @@ function submitCheckAll() {
 // on button click, check if form is valid, it form isn't valid, check all inputs & apply respective styling to them induvidually.
 // else clear the form & display a success message
 async function handleSubmit() {
-  errorContainer.innerHTML = "";
+  statusContainer.innerHTML = "";
+  statusContainer.className = "";
   const body = new FormData(form);
 
   if (!validForm()) {
     submitCheckAll();
     form.removeAttribute("style");
-    successContainer.classList.remove("sent");
   } else {
     submitButton.innerHTML = "Sending...";
 
@@ -131,8 +130,8 @@ async function handleSubmit() {
       if (json.status === "mail_sent" && validForm()) {
         form.reset();
         submitButton.innerHTML = "Send";
-        successContainer.style.display = "block";
-        successContainer.innerHTML = `<div class="message">Your message has been sent</div>`;
+        statusContainer.classList.add("success");
+        statusContainer.innerHTML = `<p class="success-txt">Your message has been sent</p>`;
         formInputs().forEach((input) => {
           input.removeAttribute("style");
         });
@@ -151,7 +150,8 @@ function sendError(error) {
   submitButton.innerHTML = "error";
   submitButton.disabled = true;
   setTimeout(resetButton, 7000);
-  errorContainer.innerHTML = buildContactError(error);
+  statusContainer.innerHTML = buildContactError(error);
+  statusContainer.classList.add("error");
 }
 
 function resetButton() {
@@ -161,9 +161,3 @@ function resetButton() {
 
 // submit form event listener
 submitButton.addEventListener("click", handleSubmit);
-
-successContainer.addEventListener("click", function () {
-  successContainer.classList.remove("sent");
-  successContainer.classList.add("new");
-  form.removeAttribute("style");
-});
