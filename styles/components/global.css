@@ -1,9 +1,52 @@
-ul li {
-  font-family: "Doubleplus", sans-serif;
+/* import fonts */
+@font-face {
+  font-family: Commando;
+  src: local("Commando") url("../../fonts/commando.ttf");
 }
 
-h1 {
-  font-family: "Commando", sans-serif;
+@font-face {
+  font-family: Avenir;
+  src: local("Avenir") url("../../fonts/AvenirLTStd-Roman.otf");
+}
+
+@font-face {
+  font-family: Doubleplus;
+  src: local("Doubleplus") url("../../fonts/Doubleplus-6Yy4g.ttf");
+}
+
+@font-face {
+  font-family: Gumela;
+  src: local("Gumela") url("../../fonts/Gumela.ttf");
+}
+
+/* Resets */
+
+:root {
+  --darkblue: #1b203d;
+  --lightblue: #bac5cf;
+  --orange: #e6ae65;
+  --darkestblue: #131521;
+  --warn: #ff7878;
+  --success: #0fbc17;
+  font-size: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--darkestblue);
+  font-family: "Avenir", sans-serif;
+  color: var(--lightblue);
+}
+
+/* Navbar */
+
+ul li {
+  font-family: "Doubleplus", sans-serif;
 }
 
 header {
@@ -65,9 +108,10 @@ nav {
 .current-page::after {
   content: "";
   position: absolute;
-  width: 100%;
+  width: 80%;
   height: 2px;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   bottom: 15px;
   background: var(--orange);
   z-index: 100;
@@ -146,6 +190,7 @@ nav {
     margin: 0px 1rem;
   }
   .current-page::after {
+    width: 100%;
     background: var(--darkblue);
   }
   .cart-count {
@@ -168,4 +213,35 @@ nav {
   .nav-ul .nav-center {
     margin-left: 38%;
   }
+}
+
+/*  Per Page "Hero" */
+h1 {
+  font-family: "Commando", sans-serif;
+}
+
+.banner {
+  margin: 200px auto 5rem auto;
+  background: var(--orange);
+  width: 80vw;
+}
+
+.banner-container {
+  display: flex;
+  justify-content: center;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.banner-txt {
+  color: var(--darkblue);
+  font-size: 12.4375vw;
+  align-self: flex-end;
+  margin-top: 3vh;
+}
+
+/* Footer  (not global, but 2 lines) */
+footer {
+  margin: 15% 0 2rem 0;
+  text-align: center;
 }

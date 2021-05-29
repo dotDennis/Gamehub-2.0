@@ -1,10 +1,5 @@
-@import "imports/variables.css";
-@import "imports/fonts.css";
-@import "imports/navbar.css";
-@import "imports/global.css";
-@import "imports/banner.css";
-@import "imports/footer.css";
-@import "imports/loader.css";
+@import "components/global.css";
+@import "components/loader.css";
 
 .container--title {
   font-family: "Gumela", sans-serif;

@@ -1,9 +1,5 @@
-@import "imports/variables.css";
-@import "imports/fonts.css";
-@import "imports/navbar.css";
-@import "imports/global.css";
-@import "imports/footer.css";
-@import "imports/loader.css";
+@import "components/global.css";
+@import "components/loader.css";
 
 main {
   margin-top: 150px;
@@ -141,5 +137,9 @@ main {
   }
   .path-container {
     width: 80%;
+  }
+
+  footer {
+    margin: 15% 0 0 0;
   }
 }

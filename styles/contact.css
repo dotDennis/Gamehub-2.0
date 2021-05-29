@@ -1,9 +1,4 @@
-@import "imports/variables.css";
-@import "imports/fonts.css";
-@import "imports/navbar.css";
-@import "imports/global.css";
-@import "imports/banner.css";
-@import "imports/footer.css";
+@import "components/global.css";
 
 .contact-form-text {
   font-family: "Avenir", sans-serif;
@@ -84,7 +79,7 @@ button:focus {
 
 /* Error Message Styling */
 .error-message {
-  color: tomato;
+  color: var(--warn);
   margin-bottom: 25px;
   margin-top: -10px;
   display: none;

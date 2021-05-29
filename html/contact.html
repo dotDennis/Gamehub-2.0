@@ -12,14 +12,14 @@
   <body>
     <header>
       <nav>
-        <a href="../index.html"><img class="navlogo" src="../images/logo.png" alt="Gamehub logo" /></a>
+        <a href="/"><img class="navlogo" src="../images/logo.png" alt="Gamehub logo" /></a>
         <button class="ham-menu closed"><i class="fas fa-bars"></i></button>
         <ul class="nav-ul">
           <div class="nav-center">
-            <li><a href="../index.html">Home</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="about.html">About</a></li>
             <li><a class="current-page" href="contact.html">Contact</a></li>
             <li><a href="marketplace.html">Buy</a></li>
-            <li><a href="coming-soon.html">Sell</a></li>
           </div>
           <div class="nav-right">
             <div class="nav-right-container">
@@ -27,7 +27,9 @@
                 <a href="Search-results.html"><i class="fas fa-search"></i></a>
               </li>
               <li>
-                <a class="cart" href="checkout.html"><span class="cart-count"></span><i class="fas fa-sack-dollar"></i></a>
+                <a class="cart" href="checkout.html"
+                  ><span class="cart-count"></span><i class="fas fa-sack-dollar"></i
+                ></a>
               </li>
               <li>
                 <a href="sign-in.html"><i class="fas fa-user"></i></a>
@@ -45,65 +47,32 @@
       </div>
       <section class="contact">
         <div id="success-message"></div>
+        <div id="error-message"></div>
         <form id="contact-form">
           <div>
-            <label>
-              Full name*
-              <input name="fullName" class="contact-form-text" id="fullName" />
-            </label>
-            <div class="error-message" id="nameError">Please enter your full name (minimum 1 character)</div>
+            <label for="fullName">Full name*</label>
+            <input name="fullName" class="contact-form-text" id="fullName" />
+            <div class="error-message" id="nameError">Please enter a minimum of 5 characters.</div>
           </div>
           <div>
-            <label>
-              Email*
-              <input name="email" class="contact-form-text" id="email" />
-            </label>
-            <div class="error-message" id="emailError">Please enter your email, example@email.com</div>
+            <label for="email">Email*</label>
+            <input name="email" class="contact-form-text" id="email" />
+            <div class="error-message" id="emailError">Please enter a valid email address.</div>
           </div>
           <div>
-            <label>
-              Your Message*
-              <textarea name="message" class="contact-form-text" id="message"></textarea>
-            </label>
-            <div class="error-message" id="messageError">Your message has to be a minimum of 25 characters, and a maximum of 150.</div>
+            <label for="fullName">Your Message*</label>
+            <textarea name="message" class="contact-form-text" id="message"></textarea>
+            <div class="error-message" id="messageError">Please enter a minimum of 25 characters.</div>
           </div>
-          <button class="contact-form-btn" id="form-button" disabled>Send</button>
+          <button type="button" class="contact-form-btn" id="form-button">Send</button>
         </form>
       </section>
     </main>
     <footer>
-      <div class="container">
-        <div class="footer-gamehub">
-          <h2 class="footer-h2">GameHub</h2>
-          <a href="coming-soon.html">Jobs</a>
-          <a href="coming-soon.html">About us</a>
-          <a href="contact.html">Contact</a>
-        </div>
-        <div class="footer-support">
-          <h2 class="footer-h2">Support</h2>
-          <a href="coming-soon.html">FAQ</a>
-          <a href="coming-soon.html">Refund Policy</a>
-          <a href="contact.html">Contact Support</a>
-        </div>
-        <div class="footer-sitemap">
-          <h2 class="footer-h2">Sitemap</h2>
-          <a href="coming-soon.html">News</a>
-          <a href="buy-games.html">Pre-order</a>
-          <a href="account.html">Account</a>
-          <a href="coming-soon.html">Redeem Code</a>
-          <a href="coming-soon.html">Sell game</a>
-        </div>
-        <div class="footer-socials">
-          <a href="coming-soon.html"><i class="fab fa-facebook"></i></a>
-          <a href="coming-soon.html"><i class="fab fa-twitter"></i></a>
-          <a href="coming-soon.html"><i class="fab fa-instagram"></i></a>
-          <a href="coming-soon.html"><i class="fab fa-twitch"></i></a>
-          <a href="coming-soon.html"><i class="fab fa-youtube"></i></a>
-        </div>
-      </div>
+      <p>&copy; Copyright 2021 <strong>Gamehub</strong>. All rights reserved.</p>
     </footer>
-    <script src="../js/hamburgerMenu.js"></script>
-    <script src="../js/validateForm.js"></script>
-    <script src="../js/components/cartCount.js"></script>
+    <script src="../js/hamburgerMenu.js" defer></script>
+    <script src="../js/contact.js" type="module" defer></script>
+    <script src="../js/components/cartCount.js" defer></script>
   </body>
 </html>

@@ -13,14 +13,14 @@
   <body>
     <header>
       <nav>
-        <a href="../index.html"><img class="navlogo" src="../images/logo.png" alt="Gamehub logo" /></a>
+        <a href="/"><img class="navlogo" src="../images/logo.png" alt="Gamehub logo" /></a>
         <button class="ham-menu closed"><i class="fas fa-bars"></i></button>
         <ul class="nav-ul">
           <div class="nav-center">
-            <li><a href="../index.html">Home</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
             <li><a href="marketplace.html">Buy</a></li>
-            <li><a href="coming-soon.html">Sell</a></li>
           </div>
           <div class="nav-right">
             <div class="nav-right-container">
@@ -28,7 +28,9 @@
                 <a href="Search-results.html"><i class="fas fa-search"></i></a>
               </li>
               <li>
-                <a class="current-page cart" href="checkout.html"><span class="cart-count"></span><i class="fas fa-sack-dollar cart-icon"></i></a>
+                <a class="current-page cart" href="checkout.html"
+                  ><span class="cart-count"></span><i class="fas fa-sack-dollar cart-icon"></i
+                ></a>
               </li>
               <li>
                 <a href="sign-in.html"><i class="fas fa-user"></i></a>
@@ -84,7 +86,9 @@
               <input type="text" id="card-expy" name="card-expy" placeholder="yyyy" />
               <label for="card-ccv">CCV</label>
               <input type="text" id="card-ccv" name="card-ccv" placeholder="xxx" />
-              <label for="sameadr"><input type="checkbox" checked="checked" name="sameadr" />Shipping adress same as billing</label>
+              <label for="sameadr"
+                ><input type="checkbox" checked="checked" name="sameadr" />Shipping adress same as billing</label
+              >
               <button type="submit" class="btn">Checkout</button>
               <p>no verification as of right now</p>
             </div>
