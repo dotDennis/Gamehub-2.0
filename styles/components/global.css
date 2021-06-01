@@ -213,29 +213,48 @@ header {
   }
 }
 
-/*  Per Page "Hero" */
-h1 {
-  font-family: "Commando", sans-serif;
-}
-
+/*  Per Page "Hero" (banner) */
 .banner {
   margin: 200px auto 5rem auto;
   background: var(--orange);
-  width: 80vw;
+  width: 80%;
+  min-width: 300px;
 }
 
-.banner-container {
-  display: flex;
-  justify-content: center;
+.banner__container {
+  text-align: center;
   flex-flow: row nowrap;
-  align-items: center;
 }
 
-.banner-txt {
+.banner__txt {
+  font-family: "Commando", sans-serif;
   color: var(--darkblue);
-  font-size: 12.4375vw;
-  align-self: flex-end;
-  margin-top: 3vh;
+  font-size: 4.7rem; /* to fit mobile */
+  padding: 1rem 0 0.5rem 0;
+}
+
+@media screen and (min-width: 500px) {
+  .banner__txt {
+    font-size: 6rem;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .banner {
+    width: 70%;
+    cursor: default;
+  }
+  .banner__txt {
+    font-size: 8rem;
+    padding: 2rem 0 0.5rem 0;
+    white-space: nowrap;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .banner__txt {
+    font-size: 11rem;
+  }
 }
 
 /* Footer  (not global, but 2 lines) */

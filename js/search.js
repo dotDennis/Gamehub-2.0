@@ -1,6 +1,6 @@
 // select containers
 const searchedContainer = document.querySelector(".loader");
-const bannerText = document.querySelector(".banner-txt");
+const bannerText = document.querySelector(".banner__txt");
 const searchText = document.querySelector(".container--title");
 
 // querystirng

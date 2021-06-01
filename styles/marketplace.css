@@ -2,13 +2,27 @@
 @import "components/loader.css";
 @import "components/error.css";
 
-.container--title {
+/* fix banner sizing on this page */
+
+@media screen and (min-width: 900px) {
+  .banner__txt {
+    font-size: 8rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .banner__txt {
+    font-size: 10rem;
+  }
+}
+
+.cards__category {
   font-family: "Gumela", sans-serif;
   color: var(--orange);
   grid-column: 2 / span 6;
 }
 
-.cards-container {
+.cards__container {
   display: grid;
   grid-template-columns: 1fr repeat(12, minmax(auto, 60px)) 1fr;
   grid-gap: 40px;
@@ -23,14 +37,14 @@
   color: var(--orange);
 }
 
-.product-cards {
+.cards__products {
   grid-column: 2 / span 12;
   display: grid;
   grid-template-columns: repeat(12, minmax(auto, 60px)) 1fr;
   grid-gap: 40px;
 }
 
-.product-card {
+.cards__product {
   position: relative;
   grid-column-end: span 4;
   display: flex;
@@ -39,11 +53,11 @@
   transition: all 0.3s ease 0s;
 }
 
-.product-card:hover {
+.cards__product:hover {
   transform: scale(1.02);
 }
 
-.product-link {
+.cards__product--link {
   position: absolute;
   top: 0;
   left: 0;
@@ -52,14 +66,14 @@
   z-index: 90;
 }
 
-.product-card__image-container {
+.cards__product--image {
   width: 100%;
   padding-top: 56.25%;
   overflow: hidden;
   position: relative;
 }
 
-.product-card__image-container img {
+.cards__product--image img {
   width: 110%;
   position: absolute;
   top: 50%;
@@ -67,24 +81,24 @@
   transform: translate(-50%, -50%);
 }
 
-.product-card__content {
+.cards__product--content {
   padding: 20px;
 }
 
-.product-card__title {
+.cards__product--title {
   margin-bottom: 20px;
   font-family: "Doubleplus", sans-serif;
   font-weight: 200px;
 }
 
-.product-card__info {
+.cards__product--info {
   display: flex;
   align-self: end;
   align-items: center;
   font-family: "Avenir", sans-serif;
 }
 
-.product-card__price {
+.cards__product--price {
   margin-left: auto;
   padding: 5px 20px;
   background-color: var(--darkestblue);

@@ -1,4 +1,4 @@
-import { buildError } from "./components/build.js";
+import { buildError, buildCard } from "./components/build.js";
 
 // select containers
 const featuredContainer = document.querySelector(".featured");
@@ -31,84 +31,30 @@ async function getProducts() {
 
     for (let i = 0; i < json.length; i++) {
       // declarations
-      const productName = json[i].name;
-      const image = json[i].images[0].src;
-      const price = json[i].price_html;
-      const rating = json[i].attributes[0].options[0];
 
       if (json[i].featured) {
         // if product is featured run this function:
-        featuredContainer.innerHTML += `<div class="product-card">
-                <a class="product-link" href="product.html?id=${json[i].id}"></a>
-                    <div class="product-card__image-container">
-                        <img src="${image}" alt="Game cover for ${productName}">
-                    </div>
-                    <div class="product-card__content">
-                        <p class="product-card__title text--medium"> ${productName} </p>
-                        <div class="product-card__info">
-                            <p class="text--medium"> ${rating}</p>
-                            <p class="product-card__price text--medium">${price} USD</p>
-                        </div>
-                        
-                    </div>
-                <button class="add-to-cart" data-product="${json[i].id}">Add to cart</button>
-            </div>`;
+        featuredContainer.innerHTML += buildCard(json[i]);
       }
       // if there's more than 1 category, check name of it.
       if (json[i].tags.length) {
         const tag = json[i].tags[0].name;
 
+        // put all this in a single function (if json[i].tags.length)
+        // const tag = json[i].tags[0].name;
+
         // if product is in category: 'PreOrder' run this function:
         if (tag === "preOrder") {
-          preOrderContainer.innerHTML += `<div class="product-card">
-                <a class="product-link" href="product.html?id=${json[i].id}"></a>
-                    <div class="product-card__image-container">
-                        <img src="${image}" alt="Game: ${productName}">
-                    </div>
-                    <div class="product-card__content">
-                        <p class="product-card__title text--medium"> ${productName} </p>
-                        <div class="product-card__info">
-                            <p class="text--medium"> ${rating}</p>
-                            <p class="product-card__price text--medium">${price} USD</p>
-                        </div>
-                    </div>
-                <button class="add-to-cart" data-product="${json[i].id}">Add to cart</button>     
-            </div>`;
+          preOrderContainer.innerHTML += buildCard(json[i]);
         }
         // if product is in category: 'NewReleases' run this function:
         if (tag === "newReleases") {
-          newReleaseContainer.innerHTML += `<div class="product-card">
-                <a class="product-link" href="product.html?id=${json[i].id}"></a>
-                    <div class="product-card__image-container">
-                        <img src="${image}" alt="Game: ${productName}">
-                    </div>
-                    <div class="product-card__content">
-                        <p class="product-card__title text--medium"> ${productName} </p>
-                        <div class="product-card__info">
-                            <p class="text--medium"> ${rating}</p>
-                            <p class="product-card__price text--medium">${price} USD</p>
-                        </div>
-                    </div>
-                <button class="add-to-cart" data-product="${json[i].id}">Add to cart</button>
-            </div>`;
+          newReleaseContainer.innerHTML += buildCard(json[i]);
         }
       }
       // then run this function (if product name is not 'false'), add it to the 'all games' list:
-      if (productName) {
-        allProductsContainer.innerHTML += `<div class="product-card">
-                <a class="product-link" href="product.html?id=${json[i].id}"></a>
-                    <div class="product-card__image-container">
-                        <img src="${image}" alt="Game: ${productName}">
-                    </div>
-                    <div class="product-card__content">
-                        <p class="product-card__title text--medium"> ${productName} </p>
-                        <div class="product-card__info">
-                            <p class="text--medium"> ${rating}</p>
-                            <p class="product-card__price text--medium">${price} USD</p>
-                        </div>
-                    </div>
-                <button class="add-to-cart" data-product="${json[i].id}">Add to cart</button>
-            </div>`;
+      if (json[i].name) {
+        allProductsContainer.innerHTML += buildCard(json[i]);
       }
     }
   } catch (error) {
