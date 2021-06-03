@@ -41,4 +41,24 @@ function buildCard(product) {
             </div>`;
 }
 
-export { buildCard, buildError, buildContactError, POSTS, ID };
+function buildProductCard(game) {
+  return `
+  <div class="left">
+    <h2>${game.name}</h2>
+    <div style="background-image: url(${game.images[0].src})" class="product-image"></div>
+  </div>
+  <div class="right">
+
+    <h3>${game.attributes[0].options[0]}</h3>
+    <h3 class="price">$${game.price} USD</h3>
+
+    <p>${game.description}</p>
+          <div class="to-cart">
+        <button class="btn-plus" data-product="${game.id}">add to cart</button>
+        <button class="btn-minus" data-product="${game.id}">remove</button>
+    </div>
+    <a class="btn" href="checkout.html">Go to checkout</a>
+    </div>`;
+}
+
+export { buildProductCard, buildCard, buildError, buildContactError, POSTS, ID };

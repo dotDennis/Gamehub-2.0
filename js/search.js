@@ -30,12 +30,8 @@ async function fetchGame() {
     const json = await (await fetch(wooAPI)).json();
 
     for (let i = 0; i < json.length; i++) {
-      // declarations
-      const productName = json[i].name;
-      const image = json[i].images[0].src;
-      const price = json[i].price_html;
-      const rating = json[i].attributes[0].options[0];
 
+      //if json.name is valid, send it to the build function
       if (json[i].name) {
         searchedContainer.innerHTML += buildCard(json[i])
       }

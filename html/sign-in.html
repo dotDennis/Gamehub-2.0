@@ -27,10 +27,10 @@
                 <a class="menu__link" href="search-results.html"><i class="fas fa-search"></i></a>
               </li>
               <li class="menu__item">
-                <a class="menu__link counter" href="checkout.html"><span class="menu__counter"></span><i class="fas fa-sack-dollar"></i></a>
+                <a class="menu__link menu__link--counter" href="checkout.html"><span class="menu__counter"></span><i class="fas fa-sack-dollar"></i></a>
               </li>
               <li class="menu__item">
-                <a class="menu__link current" href="sign-in.html"><i class="fas fa-user"></i></a>
+                <a class="menu__link menu__link--current" href="sign-in.html"><i class="fas fa-user"></i></a>
               </li>
             </ul>
           </div>
@@ -44,14 +44,14 @@
         <form class="container__form" method="POST">
           <div>
             <label class="container__label" for="username">Username</label>
-            <input class="container__input" name="username" />
+            <input id="username" class="container__input" name="username" />
           </div>
           <div>
             <label class="container__label" for="password">Password</label>
-            <input class="container__input" name="password" class="container__input" />
+            <input id="password" class="container__input" name="password" class="container__input" />
           </div>
           <p class="container__error">Username & password did not match. (Enter a min of 1 character in each field)</p>
-          <button type="button" class="container__btn" href="account.html">Sign-in</button>
+          <button class="container__btn" type="button" href="account.html">Sign-in</button>
         </form>
         <div class="container__help">
           <p class="container__warning">Please do not enter real credentials. This is an unsecure login.</p>

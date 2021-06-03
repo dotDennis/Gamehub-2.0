@@ -1,6 +1,8 @@
+import { buildProductCard } from "./components/build.js";
+
 // select containers
 const productContainer = document.querySelector(".loader");
-const pathContainer = document.querySelector(".path-container");
+const pathContainer = document.querySelector(".path");
 
 // querystirng
 const queryString = document.location.search;
@@ -26,8 +28,10 @@ async function fetchGameDetails() {
   try {
     const json = await (await fetch(wooAPI)).json();
 
-    productContainer.innerHTML = buildHtml(json);
-    pathContainer.innerHTML = `<a href="marketplace.html">Marketplace</a> / <a class="path" href="${document.location.search}">${json.name}</a>`;
+    productContainer.innerHTML = buildProductCard(json);
+    pathContainer.innerHTML = `
+    <a class="path__previous" href="marketplace.html">Marketplace</a> / <a class="path__current" href="${document.location.search}">${json.name}</a>
+    `;
 
     const buttonPlus = document.querySelector(".btn-plus");
     buttonPlus.addEventListener("click", addToCart);
@@ -44,30 +48,11 @@ async function fetchGameDetails() {
 
 fetchGameDetails();
 
-//once data has been fetched, build the HTML
 
-function buildHtml(game) {
-  return `
-  <div class="left">
-    <h2>${game.name}</h2>
-    <div style="background-image: url(${game.images[0].src})" class="product-image"></div>
-  </div>
-  <div class="right">
 
-    <h3>${game.attributes[0].options[0]}</h3>
-    <h3 class="price">$${game.price} USD</h3>
 
-    <p>${game.description}</p>
-          <div class="to-cart">
-        <button class="btn-plus" data-product="${game.id}">add to cart</button>
-        <button class="btn-minus" data-product="${game.id}">remove</button>
-    </div>
-    <a class="btn" href="checkout.html">Go to checkout</a>
-    </div>`;
-}
 
-// adding and removing items from cart below
-
+// adding and removing items from cart
 var cartArray = [];
 
 if (JSON.parse(localStorage.getItem("cartList"))) {
@@ -83,13 +68,13 @@ async function fetchGames() {
     listOfItems = json;
     return;
   } catch (error) {
-    console.log(error);
+    alert(error);
   }
 }
 
 fetchGames();
 
-const cartCounter = document.querySelector(".cart-count");
+const cartCounter = document.querySelector(".menu__counter");
 
 function addToCart(event) {
   const itemToAdd = listOfItems.find((item) => item.id === parseInt(id));

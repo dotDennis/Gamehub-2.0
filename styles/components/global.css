@@ -99,11 +99,11 @@ header {
   font-size: 1.75em;
 }
 
-.current {
+.menu__link--current {
   position: relative;
 }
 
-.current::after {
+.menu__link--current::after {
   content: "";
   position: absolute;
   width: 80%;
@@ -133,7 +133,7 @@ header {
   outline: none;
 }
 
-.counter {
+.menu__link--counter {
   position: relative;
 }
 
@@ -187,7 +187,7 @@ header {
     color: var(--darkblue);
     margin: 0px 1rem;
   }
-  .current::after {
+  .menu__link--current::after {
     width: 100%;
     background: var(--darkblue);
   }

@@ -5,36 +5,40 @@ body {
 }
 
 /*-------- CTA ---------*/
-.container {
+.cta {
+  margin-top: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.container h2 {
-  font-family: "Avenir ", sans-serif;
+.cta__title {
+  font-family: "Avenir", sans-serif;
   color: var(--lightblue);
-  font-size: 5vh;
+  font-size: 2.2rem;
   font-weight: lighter;
   border-bottom: 2px solid var(--orange);
 }
 
-.ctacontainer {
+.cta__container {
   margin-top: 3rem;
 }
-.cta {
+
+.cta__button {
   display: flex;
   flex-flow: row nowrap;
   text-decoration: none;
   align-items: center;
   transition: 0.3s ease;
 }
+
 .fa-angle-right {
-  font-size: 7vh;
+  font-size: 5rem;
   margin-left: 2vw;
   color: var(--darkblue);
 }
-.cta h3 {
+
+.cta__text {
   font-family: "Doubleplus", sans-serif;
   background: var(--darkblue);
   color: var(--lightblue);
@@ -48,29 +52,18 @@ body {
 }
 
 /*-------- HOVER EFFECTS ---------*/
-.cta:hover h3 {
+.cta__text:hover h3 {
   color: var(--orange);
 }
 
-.cta:hover {
+.cta__container:hover {
   transform: scale(1.05);
   transition: 0.3s ease;
 }
 
 /*-------- MEDIA QUERIES ---------*/
-@media (max-width: 828px) {
-  .cta {
-    margin-top: 2rem;
-  }
-  .fa-angle-right {
-    font-size: 5vh;
-  }
-}
-@media (max-height: 750px) {
-  .cta h3 {
-    margin-bottom: 50px;
-  }
-  .fa-angle-right {
-    margin-bottom: 50px;
+@media screen and (min-width: 700px) {
+  .cta__title {
+    font-size: 3rem;
   }
 }

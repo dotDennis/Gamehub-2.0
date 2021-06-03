@@ -2,20 +2,6 @@
 @import "components/loader.css";
 @import "components/error.css";
 
-/* fix banner sizing on this page */
-
-@media screen and (min-width: 900px) {
-  .banner__txt {
-    font-size: 8rem;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .banner__txt {
-    font-size: 10rem;
-  }
-}
-
 .cards__container {
   display: grid;
   padding: 60px 0;
@@ -165,12 +151,18 @@
   }
 }
 
+/* fix banner sizing on this page */
+@media screen and (min-width: 900px) {
+  .banner__txt {
+    font-size: 8rem;
+  }
+}
 
-
-
-
-
-
+@media screen and (min-width: 1200px) {
+  .banner__txt {
+    font-size: 10rem;
+  }
+}
 
 /* 4 search page specific stylings */
 

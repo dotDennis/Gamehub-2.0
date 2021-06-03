@@ -23,7 +23,12 @@ function buildHtml(game) {
   total = 0;
 
   for (let j = 0; j < cartArray.length; j++) {
-    cartContainer.innerHTML += `<p><a href="product.html">${game[j].name}</a><span class="price">$${game[j].price} USD | </span> <button data-product="${game[j].id}" class="remove-cart-item">remove</button></p>`;
+    cartContainer.innerHTML += `
+    <p>
+      <a href="product.html?id=${game[j].id}">${game[j].name}</a>
+      <span class="price">$${game[j].price} USD | </span> 
+      <button data-product="${game[j].id}" class="remove-cart-item">remove</button>
+    </p>`;
     total += parseInt(game[j].price);
     cartTotal.innerHTML = `Total <span class="price"></span><b> $${total} USD</b>`;
   }

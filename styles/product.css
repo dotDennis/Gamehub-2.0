@@ -94,14 +94,14 @@ main {
   font-family: 2rem;
 }
 
-.path-container,
-.path-container a {
+.path,
+.path a {
   margin-bottom: 1rem;
   color: var(--lightblue);
   font-family: "gumela", sans-serif;
 }
 
-.path-container {
+.path {
   width: 90%;
   cursor: default;
 }
@@ -136,7 +136,7 @@ main {
   .right .price {
     margin-top: 1rem;
   }
-  .path-container {
+  .path {
     width: 80%;
   }
 
