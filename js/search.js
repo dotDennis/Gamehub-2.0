@@ -1,7 +1,9 @@
+import { buildError, buildCard } from "./components/build.js";
+
 // select containers
 const searchedContainer = document.querySelector(".loader");
 const bannerText = document.querySelector(".banner__txt");
-const searchText = document.querySelector(".container--title");
+const searchText = document.querySelector(".cards__search");
 
 // querystirng
 const queryString = document.location.search;
@@ -35,29 +37,15 @@ async function fetchGame() {
       const rating = json[i].attributes[0].options[0];
 
       if (json[i].name) {
-        searchedContainer.innerHTML += `
-        <div class="product-card">
-                <a class="product-link" href="product.html?id=${json[i].id}"></a>
-                    <div class="product-card__image-container">
-                        <img src="${image}" alt="Game: ${productName}">
-                    </div>
-                    <div class="product-card__content">
-                        <p class="product-card__title text--medium"> ${productName} </p>
-                        <div class="product-card__info">
-                            <p class="text--medium"> ${rating}</p>
-                            <p class="product-card__price text--medium">${price} USD</p>
-                        </div>
-                        
-                    </div>
-                <button class="add-to-cart" data-product="${json[i].id}">Add to cart</button>
-            </div>`;
+        searchedContainer.innerHTML += buildCard(json[i])
       }
     }
     if (json.length === 0) {
-      searchedContainer.classList.add("failed");
+      searchedContainer.classList.add("cards__search--failed");
       searchedContainer.innerHTML = `<p class="text--medium">We found no games when searching for "${search}"</p>`;
     }
   } catch (error) {
+    // display error!
     console.log(error);
   } finally {
     searchedContainer.classList.remove("loader");

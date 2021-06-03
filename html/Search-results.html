@@ -44,13 +44,13 @@
                     <h1 class="banner__txt">Searching...</h1>
                 </div>
             </section>
-                <form class="search-games">
+                <form class="search">
                     <div>
-                    <input type="text" name="search" aria-label="search">
-                    <button type="submit"><i class="fas fa-search"></i></button></div>
+                    <input type="text" name="search" aria-label="search text">
+                    <button type="submit" aria-label="search button"><i class="fas fa-search"></i></button></div>
                 </form>
                 <section class="cards__container">
-            <h2 class="cards__category">Games related to search...</h2>
+            <h2 class="cards__category cards__search">Games related to search...</h2>
             <div class="cards__products loader">
             </div>
         </section>
@@ -60,7 +60,7 @@
             </footer>
                 <script src="../js/hamburgerMenu.js"></script>
         <script src="../js/components/cartCount.js"></script>
-        <script src="../js/search.js"></script>
+        <script src="../js/search.js" type="module"></script>
 
 </body>
 </html>

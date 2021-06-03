@@ -174,20 +174,22 @@
 
 /* 4 search page specific stylings */
 
-.failed {
+.cards__search--failed {
   display: flex;
 }
 
-.search-games div {
-  width: 100%;
-}
-
-.search-games input {
-  width: 90%;
-}
-
-.search-games {
+.search {
   max-width: 600px;
   margin: 0 auto;
 }
+
+.search div {
+  width: 100%;
+}
+
+.search input {
+  width: 90%;
+}
+
+
 
