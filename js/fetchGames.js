@@ -66,9 +66,8 @@ async function getProducts() {
     // remove loader
     loader.classList.remove("loader");
 
-    // add items to cart
-
-    const buttons = document.querySelectorAll(".add-to-cart");
+    // implement the add to cart feature
+    const buttons = document.querySelectorAll(".cards__add-to-cart");
     buttons.forEach(function (button) {
       button.onclick = function (event) {
         const itemToAdd = json.find((item) => item.id === parseInt(event.target.dataset.product));
