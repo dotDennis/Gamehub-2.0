@@ -5,9 +5,8 @@ const params = new URLSearchParams(queryString);
 
 // get the id from the querystring
 let username = params.get("u");
-let password = params.get("p");
 
-if (!username || !password) {
+if (!username) {
   location.href = "sign-in.html";
 }
 

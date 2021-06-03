@@ -69,7 +69,7 @@ async function handleSubmit() {
   if (!validForm()) {
     submitCheckAll();
   } else {
-    location.href = `account.html?u=${form["username"].value}&p=${form["password"].value}`;
+    location.href = `account.html?u=${form["username"].value}`;
   }
 }
 
