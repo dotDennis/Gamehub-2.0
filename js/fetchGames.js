@@ -9,8 +9,12 @@ const errorContainer = document.querySelector("#status");
 const loader = document.querySelector(".loader");
 const cartCounter = document.querySelector(".menu__counter");
 
+
+// How many items should be retrieved from the API? (Max === 100), (Default === 10);
+const productCount = 18; // it´s here to reduce load time but still giving easy access to changing this later.
+
 // select the API & add keys
-const url = "https://gamehub-api.dennisl.no/wp-json/wc/v3/products?per_page=20";
+const url = `https://gamehub-api.dennisl.no/wp-json/wc/v3/products?per_page=${productCount}`;
 const key = "ck_41dc2be223a446796ff7d043052badfbbdd3dc4e";
 const secret = "cs_02e2e485a33916ce70229285abcc7501887ff2c9";
 
@@ -27,8 +31,7 @@ if (JSON.parse(localStorage.getItem("cartList"))) {
 async function getProducts() {
   try {
     // await response then await json
-    var json = await (await fetch(wooAPI)).json();
-
+    let json = await (await fetch(wooAPI)).json();
     for (let i = 0; i < json.length; i++) {
       // declarations
 

@@ -12,8 +12,8 @@
   <body>
     <header>
       <nav class="menu">
-        <a class="menu__link" href="/"><img class="menu__logo" src="../images/logo.png" alt="Gamehub logo" /></a>
-        <button class="menu__hamburger closed"><i class="fas fa-bars"></i></button>
+        <a aria-label="Home" class="menu__link" href="/"><img class="menu__logo" src="../images/logo.png" alt="Gamehub logo" /></a>
+        <button aria-label="Toggle menu" class="menu__hamburger closed"><i class="fas fa-bars"></i></button>
         <ul class="menu__list menu__ul">
           <div class="menu__center">
             <li class="menu__item"><a class="menu__link" href="/">Home</a></li>
@@ -24,13 +24,13 @@
           <div class="menu__right">
             <ul class="menu__list">
               <li class="menu__item">
-                <a class="menu__link" href="search-results.html"><i class="fas fa-search"></i></a>
+                <a aria-label="Search" class="menu__link" href="search.html"><i class="fas fa-search"></i></a>
               </li>
               <li class="menu__item">
-                <a class="menu__link counter" href="checkout.html"><span class="menu__counter"></span><i class="fas fa-sack-dollar"></i></a>
+                <a aria-label="Go to checkout" class="menu__link counter" href="checkout.html"><span class="menu__counter"></span><i class="fas fa-sack-dollar"></i></a>
               </li>
               <li class="menu__item">
-                <a class="menu__link" href="sign-in.html"><i class="fas fa-user"></i></a>
+                <a aria-label="Sign in" class="menu__link" href="sign-in.html"><i class="fas fa-user"></i></a>
               </li>
             </ul>
           </div>
@@ -38,11 +38,11 @@
       </nav>
     </header>
     <main>
-      <div class="banner">
+      <section class="banner">
         <div class="banner__container">
           <h1 class="banner__txt">Contact Us</h1>
         </div>
-      </div>
+      </section>
       <section class="contact">
         <!-- add error/success class on action -->
         <div id="status"></div>

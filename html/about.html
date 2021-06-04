@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="View your account information on GameHub. Change your preferences & other settings." />
-    <title>GameHub | Your Account</title>
-    <link rel="stylesheet" href="../styles/product.css" />
+    <title>GameHub | About Us</title>
+    <link rel="stylesheet" href="../styles/about.css" />
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/3c371c70a6.js" crossorigin="anonymous"></script>
   </head>
@@ -17,7 +17,7 @@
         <ul class="menu__list menu__ul">
           <div class="menu__center">
             <li class="menu__item"><a class="menu__link" href="/">Home</a></li>
-            <li class="menu__item"><a class="menu__link" href="about.html">About</a></li>
+            <li class="menu__item"><a class="menu__link menu__link--current" href="about.html">About</a></li>
             <li class="menu__item"><a class="menu__link" href="contact.html">Contact</a></li>
             <li class="menu__item"><a class="menu__link" href="marketplace.html">Buy</a></li>
           </div>
@@ -38,13 +38,25 @@
       </nav>
     </header>
     <main>
-      <div class="path"></div>
-      <div class="loader"></div>
+        <section class="banner">
+            <div class="banner__container">
+                <h1 class="banner__txt">About Us</h1>
+            </div>
+        </section>
+      <section class="container container--first">
+          <h2 class="container__title">Our journey</h2>
+          <p class="container__txt container__txt--first">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, unde similique dolorum id minus, fugit cupiditate necessitatibus magnam quis sunt ipsa magni, amet quod nobis corrupti quisquam omnis expedita esse deleniti! Beatae ullam eius sit, molestias sapiente, suscipit blanditiis nam harum quis quaerat laboriosam ea ad eaque cumque! Alias, praesentium.
+          </p>
+          <p class="container__txt">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum adipisci sint repellat tempora id praesentium cupiditate quaerat nostrum similique iure consectetur quasi deserunt, maxime voluptas facere aspernatur inventore necessitatibus? Veritatis alias placeat ipsa quis, harum voluptatem? Modi est nesciunt nulla libero aliquam officiis, cum reprehenderit animi, aspernatur quia inventore alias distinctio commodi at. Optio accusamus similique quos esse incidunt repudiandae fugiat eveniet facere, quidem modi cum vitae hic? Facere aspernatur quibusdam corporis deserunt ab culpa. Autem nam tenetur omnis debitis at, nemo hic excepturi quis incidunt praesentium tempora quibusdam nobis maxime temporibus! Dolores iure eligendi ad, suscipit ut ratione atque!
+          </p>
+      </section>
     </main>
     <footer>
       <p>&copy; Copyright 2021 <strong>Gamehub</strong>. All rights reserved.</p>
     </footer>
-    <script src="../js/hamburgerMenu.js"></script>
-    <script src="../js/product.js" type="module"></script>
-  </body>
+    <script src="../js/hamburgerMenu.js" defer></script>
+    <script src="../js/components/cartCount.js" defer></script>
+</body>
 </html>

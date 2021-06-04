@@ -68,7 +68,7 @@ async function fetchGames() {
     listOfItems = json;
     return;
   } catch (error) {
-    alert(error);
+    alert(error); /* add error container */
   }
 }
 

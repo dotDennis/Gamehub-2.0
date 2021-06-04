@@ -18,6 +18,7 @@ body {
   font-size: 2.2rem;
   font-weight: lighter;
   border-bottom: 2px solid var(--orange);
+  text-align: center;
 }
 
 .cta__container {
@@ -42,7 +43,7 @@ body {
   font-family: "Doubleplus", sans-serif;
   background: var(--darkblue);
   color: var(--lightblue);
-  font-size: 4vh;
+  font-size: 2rem;
   font-weight: lighter;
   border-radius: 45px;
   padding: 1.5vh 7vw 1.5vh 7vw;

@@ -1,0 +1,33 @@
+@import "components/global.css";
+
+.container {
+    margin: 0 7%;
+    padding: 2rem;
+    border-radius: 45px;
+    background: var(--darkblue);
+}
+
+
+.container__title {
+    font-family: "Gumela", sans-serif;
+    color: var(--orange);
+    margin-bottom: 1rem;
+}
+
+.container__txt--first {
+    margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 750px) {
+    .container {
+        margin: 0 10%;
+        padding: 3rem;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .container {
+        margin: 0 15%;
+        padding: 3rem;
+    }
+}

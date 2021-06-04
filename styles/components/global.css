@@ -15,9 +15,12 @@
 }
 
 @font-face {
-  font-family: "Gumela";
-  src: url("../../fonts/Gumela.ttf");
+  font-family: 'Gumela';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Gumela'), url('https://fonts.cdnfonts.com/s/22720/Gumela.woff') format('woff');
 }
+
 
 /* Resets */
 

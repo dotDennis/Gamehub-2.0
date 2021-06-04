@@ -26,7 +26,7 @@ function buildCard(product) {
   const rating = product.attributes[0].options[0];
 
   return `<div class="cards__product">
-                <a class="cards__link" href="product.html?id=${product.id}"></a>
+                <a aria-label="View ${productName}" class="cards__link" href="product.html?id=${product.id}"></a>
                     <div class="cards__image">
                         <img src="${image}" alt="Game cover for ${productName}">
                     </div>

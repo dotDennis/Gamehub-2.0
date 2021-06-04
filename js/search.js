@@ -3,7 +3,7 @@ import { buildError, buildCard } from "./components/build.js";
 // select containers
 const searchedContainer = document.querySelector(".loader");
 const bannerText = document.querySelector(".banner__txt");
-const searchText = document.querySelector(".cards__search");
+const searchText = document.querySelector(".cards__searched");
 
 // querystirng
 const queryString = document.location.search;
@@ -37,7 +37,7 @@ async function fetchGame() {
       }
     }
     if (json.length === 0) {
-      searchedContainer.classList.add("cards__search--failed");
+      searchedContainer.classList.add("cards__searched--failed");
       searchedContainer.innerHTML = `<p class="text--medium">We found no games when searching for "${search}"</p>`;
     }
   } catch (error) {
@@ -47,7 +47,7 @@ async function fetchGame() {
     searchedContainer.classList.remove("loader");
     bannerText.innerHTML = "Results";
     if (!search) {
-      searchText.innerHTML = searchText.innerHTML;
+      searchText.innerHTML = `<p class="text--medium">All games in database</p>`;
     } else {
       searchText.innerHTML = `Games related to "${search}"`;
     }

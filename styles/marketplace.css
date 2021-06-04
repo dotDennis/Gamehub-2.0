@@ -166,7 +166,7 @@
 
 /* 4 search page specific stylings */
 
-.cards__search--failed {
+.cards__searched--failed {
   display: flex;
 }
 
