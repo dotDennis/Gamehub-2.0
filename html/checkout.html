@@ -27,7 +27,9 @@
                 <a aria-label="Search" class="menu__link" href="search.html"><i class="fas fa-search"></i></a>
               </li>
               <li class="menu__item">
-                <a aria-label="Go to checkout" class="menu__link menu__link--counter menu__link--current" href="checkout.html"><span class="menu__counter"></span><i class="fas fa-sack-dollar"></i></a>
+                <a aria-label="Go to checkout" class="menu__link menu__link--counter menu__link--current" href="checkout.html"
+                  ><span class="menu__counter"></span><i class="fas fa-sack-dollar"></i
+                ></a>
               </li>
               <li class="menu__item">
                 <a aria-label="Sign in" class="menu__link" href="sign-in.html"><i class="fas fa-user"></i></a>
@@ -43,59 +45,74 @@
           <h1 class="banner__txt">Checkout</h1>
         </div>
       </section>
-      <h2 class="titles title-checkout">Checkout</h2>
+      <div class="status" id="statusContainer"></div>
       <div class="checkout">
-        <div class="checkout--container">
-          <form action="checkout.php" method="POST">
-            <div class="rowleft">
-              <h2 class="inside">Billing Address</h2>
-              <label for="fname">Full name</label>
-              <input type="text" id="fname" name="firstname" placeholder="Ola Nordmann" />
-              <label for="email">Email</label>
-              <input type="text" id="email" name="email" placeholder="you@example.com" />
-              <label for="adr">Adress</label>
-              <input type="text" id="adr" name="adr" placeholder="1234 Main St." />
-              <label for="adr2">Adress 2 (Optional)</label>
-              <input type="text" id="adr2" name="adr2" placeholder="Apartment or suite" />
-              <label for="country">Country</label>
-              <input type="text" id="country" name="country" placeholder="..." />
-              <label for="state">State</label>
-              <input type="text" id="state" name="state" placeholder="..." />
-              <label for="zip">Zip</label>
-              <input type="text" id="zip" name="zip" placeholder="Postal code" />
+        <div class="checkout__container">
+          <form class="checkout__form">
+            <div class="checkout__billing">
+              <h2 class="checkout__title checkout__title--first">Billing Address</h2>
+              <label class="checkout__label" for="fullName">Full name</label>
+              <input class="checkout__input" id="fullName" name="fullName" placeholder="Ola Nordmann" />
+              <span class="checkout__error">Please enter a valid name</span>
+              <label class="checkout__label" for="email">Email</label>
+              <input class="checkout__input" id="email" name="email" placeholder="you@example.com" />
+              <span class="checkout__error">Please enter a valid email address</span>
+              <label class="checkout__label" for="adr">Adress</label>
+              <input class="checkout__input" id="adr" name="adr" placeholder="1234 Main St." />
+              <span class="checkout__error">Please enter a valid address</span>
+              <label class="checkout__label" for="adr2">Adress 2 (Optional)</label>
+              <input class="checkout__input" id="adr2" name="adr2" placeholder="Apartment or suite" />
+              <label class="checkout__label" for="country">Country</label>
+              <input class="checkout__input" id="country" name="country" placeholder="..." />
+              <span class="checkout__error">Please enter a valid country</span>
+              <label class="checkout__label" for="state">State</label>
+              <input class="checkout__input" id="state" name="state" placeholder="..." />
+              <span class="checkout__error">Please enter a valid state</span>
+              <label class="checkout__label" for="zip">Zip</label>
+              <input class="checkout__input" id="zip" name="zip" placeholder="Postal code" />
+              <span class="checkout__error">Please enter a valid zip</span>
             </div>
-            <div class="rowright">
-              <h2 class="inside">Payment</h2>
-              <label for="card">Payment options</label>
-              <div class="card-container">
-                <i class="fab fa-cc-visa"></i>
-                <i class="fab fa-cc-mastercard"></i>
-                <i class="fab fa-cc-paypal"></i>
-                <i class="fab fa-google-pay"></i>
-              </div>
-              <label for="card-name">Name on card</label>
-              <input type="text" id="card-name" name="card-name" placeholder="Ola Nordmann" />
-              <label for="card-num">Card number</label>
-              <input type="text" id="card-num" name="card-nume" placeholder="1111-2222-3333-444" />
-              <label for="expm">Exp. month</label>
-              <input type="text" id="card-expm" name="card-expm" placeholder="September" />
-              <label for="card-expy">Exp. year</label>
-              <input type="text" id="card-expy" name="card-expy" placeholder="yyyy" />
-              <label for="card-ccv">CCV</label>
-              <input type="text" id="card-ccv" name="card-ccv" placeholder="xxx" />
-              <label for="sameadr"><input type="checkbox" checked="checked" name="sameadr" />Shipping adress same as billing</label>
-              <button type="submit" class="btn">Checkout</button>
-              <p>no verification as of right now</p>
+            <div class="checkout__payment">
+              <h2 class="checkout__title">Payment</h2>
+              <label class="checkout__label" for="card">Payment options</label>
+              <select name="paymentOption" class="checkout__select">
+                <option value=""></option>
+                <option>Visa &#xf1f0;</option>
+                <option>Mastercard &#xf1f1;</i></option>
+                <option>PayPal &#xf1f4;</option>
+              </select>
+              <span class="checkout__error">Please select a valid option</span>
+              <label class="checkout__label" for="cardName">Name on card</label>
+              <input class="checkout__input" id="cardName" name="cardName" placeholder="Ola Nordmann" />
+              <span class="checkout__error">Please enter a valid name</span>
+              <label class="checkout__label" for="cardNumber">Card number</label>
+              <input class="checkout__input" id="cardNumber" name="cardNumber" placeholder="1111-2222-3333-444" />
+              <span class="checkout__error">Please enter a valid card number</span>
+              <label class="checkout__label" for="cardExpm">Exp. month</label>
+              <input class="checkout__input" id="cardExpm" name="cardExpm" placeholder="September" />
+              <span class="checkout__error">Please enter a valid expiration month</span>
+              <label class="checkout__label" for="cardExpy">Exp. year</label>
+              <input class="checkout__input" id="cardExpy" name="cardExpy" placeholder="yyyy" />
+              <span class="checkout__error">Please enter a valid expiration year</span>
+              <label class="checkout__label" for="cardCcv">CCV</label>
+              <input class="checkout__input" id="cardCcv" name="cardCcv" placeholder="xxx" />
+              <span class="checkout__error">Please enter a valid CCV</span>
+              <label class="checkout__label" for="sameadr"><input type="checkbox" checked="checked" name="sameadr" />Shipping adress same as billing</label>
             </div>
+            <button type="button" class="checkout__btn">Checkout</button>
+            <p class="checkout__failed">Make sure everything is valid!</p>
           </form>
         </div>
-        <h2 class="titles title-cart">Cart</h2>
-        <div class="cart-info"></div>
-        <hr />
-        <p class="total-price"></p>
-      </div>
+        <div class="checkout__cart">
+          <h2 class="checkout__title checkout__title--cart">Cart</h2>
+          <div class="checkout__info"></div>
+          <hr />
+          <p class="checkout__price"></p>
+        </div>
+    </div>
     </main>
-    <script src="../js/hamburgerMenu.js"></script>
-    <script src="../js/checkout.js" type="module"></script>
+    <script src="../js/hamburgerMenu.js" defer></script>
+    <script src="../js/checkout.js" type="module" defer></script>
+    <script src="../js/checkoutValidate.js" defer></script>
   </body>
 </html>

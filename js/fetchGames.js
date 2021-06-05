@@ -9,7 +9,6 @@ const errorContainer = document.querySelector("#status");
 const loader = document.querySelector(".loader");
 const cartCounter = document.querySelector(".menu__counter");
 
-
 // How many items should be retrieved from the API? (Max === 100), (Default === 10);
 const productCount = 18; // it´s here to reduce load time but still giving easy access to changing this later.
 
@@ -31,7 +30,7 @@ if (JSON.parse(localStorage.getItem("cartList"))) {
 async function getProducts() {
   try {
     // await response then await json
-    let json = await (await fetch(wooAPI)).json();
+    var json = await (await fetch(wooAPI)).json();
     for (let i = 0; i < json.length; i++) {
       // declarations
 

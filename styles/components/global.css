@@ -15,12 +15,11 @@
 }
 
 @font-face {
-  font-family: 'Gumela';
+  font-family: "Gumela";
   font-style: normal;
   font-weight: 400;
-  src: local('Gumela'), url('https://fonts.cdnfonts.com/s/22720/Gumela.woff') format('woff');
+  src: local("Gumela"), url("https://fonts.cdnfonts.com/s/22720/Gumela.woff") format("woff");
 }
-
 
 /* Resets */
 
@@ -31,7 +30,7 @@
   --darkestblue: #131521;
   --warn: #ff7878;
   --success: #0fbc17;
-  font-size: 16px;
+  scroll-behavior: smooth;
 }
 
 * {
@@ -44,6 +43,7 @@ body {
   background-color: var(--darkestblue);
   font-family: "Avenir", sans-serif;
   color: var(--lightblue);
+  font-size: 16px;
 }
 
 /* Navbar */

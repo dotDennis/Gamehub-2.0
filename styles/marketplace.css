@@ -65,7 +65,6 @@
   font-weight: 200px;
 }
 
-
 .cards__link {
   position: absolute;
   top: 0;
@@ -120,9 +119,6 @@
   transition: 0.3s ease;
 }
 
-
-
-
 @media screen and (min-width: 700px) {
   .cards__container {
     gap: 20px;
@@ -146,8 +142,7 @@
     grid-template-columns: repeat(12, minmax(auto, 60px)) 1fr;
   }
   .cards__product {
-  grid-column-end: span 4;
-
+    grid-column-end: span 4;
   }
 }
 
@@ -163,25 +158,3 @@
     font-size: 10rem;
   }
 }
-
-/* 4 search page specific stylings */
-
-.cards__searched--failed {
-  display: flex;
-}
-
-.search {
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.search div {
-  width: 100%;
-}
-
-.search input {
-  width: 90%;
-}
-
-
-
